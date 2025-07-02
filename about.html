@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us-ReimVPN</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+  <!-- Tailwind and other styles -->
+  <link rel="stylesheet" href="assets/css/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/aos/aos.css">
+  <!-- swiper Js-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <div
+      class="bg-[url('../images/bg/sub-page-bg.png')] bg-center bg-no-repeat flex flex-col lg2:gap-55 lg:gap-45 sm:gap-35 gap-25">
+      <!-- ======== 2.1. Header Section ======== -->
+      <header class="pt-3 md2:pt-5 relative">
+        <nav aria-label="Main navigation">
+          <div class="Container">
+            <div class="flex items-center justify-between">
+              <!-- Logo -->
+              <a href="index.html" aria-label="ReimVPN Home">
+                <figure class="w-fit">
+                  <img src="assets/images/logo.svg" alt="ReimVPN Logo" class="w-32 sm:w-36 md2:w-[185px]">
+                </figure>
+              </a>
+
+              <!-- Toggle Button (Mobile) -->
+              <button id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"
+                class="button text-2xl md2:hidden z-[100] hover:bg-blue2 transition-all duration-300 bg-blue1 sm:h-8 h-8 sm:w-8 w-8 flex items-center justify-center rounded">
+                <i class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+              </button>
+
+              <!-- Desktop Navigation -->
+              <div class="border border-bordercolor rounded-[60px] py-2 pr-2 pl-5 hidden md2:block">
+                <ul class="flex items-center gap-4" role="menubar">
+                  <li><a href="index.html" role="menuitem"
+                      class="p-2 hover:text-txtblue transition-all duration-300">Home</a></li>
+                  <li><a href="about.html" role="menuitem"
+                      class="p-2 hover:text-txtblue transition-all duration-300">About</a></li>
+                  <li><a href="features.html" role="menuitem"
+                      class="p-2 hover:text-txtblue transition-all duration-300">Features</a></li>
+
+                  <!-- Dropdown -->
+                  <li class="dropdown relative">
+                    <button aria-haspopup="true" aria-expanded="false"
+                      class="button flex items-end gap-1 p-2 hover:text-txtblue transition-all duration-300"
+                      role="menuitem">
+                      Pages
+                      <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                    <ul
+                      class="dropdown-menu absolute top-full right-0 w-52 bg-gradient-to-r from-blue1 to-blue2 overflow-hidden max-h-0 invisible rounded shadow-md z-50 transition-all duration-300 ease-in-out"
+                      role="menu" aria-hidden="true">
+                      <li><a href="contact.html" role="menuitem"
+                          class="block p-2 px-3 hover:bg-blue2 rounded">Contact</a>
+                      </li>
+                      <li><a href="faq.html" role="menuitem" class="block p-2 px-3 hover:bg-blue2 rounded">FAQ's</a>
+                      </li>
+                      <li><a href="testimonials.html" role="menuitem"
+                          class="block p-2 px-3 hover:bg-blue2 rounded">Testimonials</a></li>
+                      <li><a href="blogs.html" role="menuitem" class="block p-2 px-3 hover:bg-blue2 rounded">Blogs</a>
+                      </li>
+                      <li><a href="blog-details.html" role="menuitem" class="block p-2 px-3 hover:bg-blue2 rounded">Blog
+                          Details</a></li>
+                      <li><a href="error.html" role="menuitem" class="block p-2 px-3 hover:bg-blue2 rounded">404</a>
+                      </li>
+                      <li><a href="coming-soon.html" role="menuitem"
+                          class="block p-2 px-3 hover:bg-blue2 rounded">Coming
+                          Soon</a></li>
+                    </ul>
+                  </li>
+
+                  <li><a href="index.html" class="hover1 !py-3 !px-5 button" role="menuitem">Get Started</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overlay -->
+          <div id="overlay" class="fixed inset-0 bg-opacity-50 hidden z-40" aria-hidden="true"></div>
+
+          <!-- Mobile Menu Drawer (From Left) -->
+          <div id="mobileMenu"
+            class="fixed top-0 left-0 h-full w-60 xs:w-64 bg-dark-B shadow-lg transform -translate-x-full transition-transform duration-300 z-50 md2:hidden"
+            role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle" aria-hidden="true">
+            <div class="p-5 pt-11 flex flex-col gap-7 relative">
+              <h2 id="mobileMenuTitle" class="sr-only">Mobile Menu</h2>
+              <button id="navClose" aria-label="Close mobile menu"
+                class="button absolute top-4 right-4 hover:bg-blue2 bg-blue1 h-8 w-8 flex items-center justify-center rounded transition-all duration-300">
+                <i class="fa-solid fa-xmark text-2xl md:text-2xl" aria-hidden="true"></i>
+              </button>
+              <div class="flex flex-col" role="menu">
+                <a href="index.html" role="menuitem" class="p-2 hover:text-txtblue transition-all duration-300">Home</a>
+                <a href="about.html" role="menuitem"
+                  class="p-2 hover:text-txtblue transition-all duration-300">About</a>
+                <a href="features.html" role="menuitem"
+                  class="p-2 hover:text-txtblue transition-all duration-300">Features</a>
+                <a href="contact.html" role="menuitem"
+                  class="p-2 hover:text-txtblue transition-all duration-300">Contact</a>
+                <a href="faq.html" role="menuitem" class="p-2 hover:text-txtblue transition-all duration-300">FAQ's</a>
+                <a href="testimonials.html" role="menuitem"
+                  class="p-2 hover:text-txtblue transition-all duration-300">Testimonials</a>
+
+                <div>
+                  <button id="mobileDropdownToggle"
+                    class="button w-full text-left p-2 flex justify-between items-center hover:text-txtblue transition-all duration-300"
+                    aria-expanded="false" aria-controls="mobileDropdown" role="menuitem">
+                    Pages <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="mobileDropdown" class="max-h-0 overflow-hidden transition-all duration-300" role="menu"
+                    aria-hidden="true">
+
+                    <a href="blogs.html" role="menuitem"
+                      class="block p-2 pl-4 hover:text-txtblue transition-all duration-300">Blogs</a>
+                    <a href="blog-details.html" role="menuitem"
+                      class="block p-2 pl-4 hover:text-txtblue transition-all duration-300">Blog
+                      Details</a>
+                    <a href="error.html" role="menuitem"
+                      class="block p-2 pl-4 hover:text-txtblue transition-all duration-300">404</a>
+                    <a href="coming-soon.html" role="menuitem"
+                      class="block p-2 pl-4 hover:text-txtblue transition-all duration-300">Coming Soon</a>
+                  </div>
+                </div>
+              </div>
+              <a href="about.html" class="hover1 button" role="menuitem">Get Started</a>
+            </div>
+          </div>
+
+        </nav>
+      </header>
+      <!-- ======== End of 2.1. Header Section ======== -->
+      <!-- ======== 2.2. About Us Section ======== -->
+      <section class="about-us pb-12.5 sm:pb-18 lg:pb-25" aria-label="About US">
+        <div class="Container">
+          <div class="flex flex-col md:gap-9 sm:gap-7 gap-5 lg2:w-6/12 md:w-8/12 sm:w-10/12">
+            <div class="flex flex-col md:gap-3 gap-2.5">
+              <h1 class="lg2:w-7/12 lg:w-9/12">What is a reim VPN?</h1>
+              <p class="lg3:w-11/12">Lorem ipsum dolor sit amet consectetur. Sed commodo lectus nisi mi vitae egestas
+                sed enim. Quam proin
+                orci faucibus cursus ut vestibulum. Eget in enim vitae urna nunc. Venenatis tempus egestas egestas
+                diam
+                aliquet. Dis ut venenatis vitae consectetur netus adipiscing. Massa sagittis sociis ornare malesuada
+                ullamcorper massa sollicitudin.</p>
+            </div>
+            <a href="about.html" class="button hover1 w-fit"
+              aria-label="Download Free VPN Trial from About Page">Download Free Trial</a>
+          </div>
+        </div>
+      </section>
+      <!-- ======== End of 2.2. About Us Section ======== -->
+    </div>
+    <!-- ======== 2.3. VPN Setup Section ======== -->
+    <section class="vpn-setup sec-pad" aria-label="How VPN Works">
+      <div class="Container">
+        <div class="flex flex-col lg:gap-19 sm:gap-15 gap-9">
+          <div class="flex flex-col lg:gap-4 gap-2.5 items-center text-center">
+            <h2 id="vpn-work-heading" class="2xs:w-full w-10/12">How Does a VPN Work?</h2>
+            <p class="lg2:w-[49%] md:w-7/12 sm:w-10/12 2xs:w-11/12">Lorem ipsum dolor sit amet consectetur. Tincidunt
+              pulvinar placerat ut enim. Molestie sit
+              lorem
+              senectus natoque aenean sed vitae nunc.</p>
+          </div>
+          <div class="grid md:grid-cols-3 sm:grid-cols-2 lg3:gap-7.5 gap-4">
+            <div
+              class="relative overflow-hidden bg-dark-A border border-bordercolor2 rounded-[25px] pt-7 lg2:px-6 px-4 lg:pb-0 pb-5 group transition-all duration-500 self-start"
+              role="region" aria-labelledby="choose-plan-heading">
+              <div
+                class="absolute z-1 inset-0 bg-gradient-to-bl from-[#00ABF3] to-[#0C5192] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div class="z-10 relative lg:group-hover:pb-15 transition-all duration-500">
+                <div class="flex flex-col lg2:gap-10 gap-5 lg2:pb-15.5 pb-12 px-2">
+                  <span
+                    class="lg2:text-[80px] text-6xl !font-[100] text-transparent bg-clip-text bg-gradient-to-b from-white/60 via-white/15 to-[#070E2E]/30">Choose</span>
+
+                  <div class="flex flex-col gap-2.5">
+                    <h4 id="choose-plan-heading">Choose a VPN plan</h4>
+                    <span class="p-s lg3:w-11/12 sm:w-full 2xs:w-11/12">Lorem ipsum dolor sit amet consectetur.
+                      Tincidunt pulvinar placerat ut enim. Molestie sit lorem
+                      senectus natoque aenean.</span>
+                  </div>
+                </div>
+                <a href="plan.html"
+                  class="button hover3 w-full lg:py-[15px] py-3 lg:absolute bottom-4  lg:invisible lg:opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-500"
+                  aria-label="Select VPN Plan">Select
+                  Plan</a>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden bg-dark-A border border-bordercolor2 rounded-[25px] pt-7 lg:pb-0 pb-5 group transition-all duration-500 self-start"
+              role="region" aria-labelledby="download-heading">
+              <div
+                class="absolute z-1 inset-0 bg-gradient-to-bl from-[#00ABF3] to-[#0C5192] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div class="z-10 relative lg:group-hover:pb-15 transition-all duration-500 flex flex-col items-cente">
+                <div
+                  class="lg2:text-[80px] text-6xl !font-[100] md:text-center 4xs:text-start text-center md:px-0 4xs:px-5 text-transparent bg-clip-text bg-gradient-to-b from-white/60 via-white/15 to-[#070E2E]/30">
+                  Download</div>
+
+                <div class="flex flex-col gap-2.5 lg2:pt-10 pt-5 lg2:pb-15.5 pb-12 lg2:px-8 px-6">
+                  <h4 id="download-heading">Download VPN</h4>
+                  <span class="p-s lg3:w-11/12 sm:w-full 2xs:w-11/12">Lorem ipsum dolor sit amet consectetur.
+                    Tincidunt pulvinar placerat ut enim. Molestie sit lorem
+                    senectus natoque aenean.</span>
+                </div>
+                <div class="flex justify-center">
+                  <a href="plan.html"
+                    class="button hover3 w-[89%] lg:py-[15px] py-3 lg:absolute bottom-4 lg:invisible lg:opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-500"
+                    aria-label="Download Free VPN Trial">Download
+                    Free Trial</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden bg-dark-A border border-bordercolor2 rounded-[25px] pt-7 lg2:px-6 px-4 lg:pb-0 pb-5 group transition-all duration-500 self-start"
+              role="region" aria-labelledby="connect-heading">
+              <div
+                class="absolute z-1 inset-0 bg-gradient-to-bl from-[#00ABF3] to-[#0C5192] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              </div>
+              <div class="z-10 relative lg:group-hover:pb-15 transition-all duration-500">
+                <div class="flex flex-col lg2:gap-10 gap-5 lg2:pb-15.5 pb-12 px-2">
+                  <span
+                    class="lg2:text-[80px] text-6xl !font-[100] text-transparent bg-clip-text bg-gradient-to-b from-white/60 via-white/15 to-[#070E2E]/30">Connect</span>
+
+                  <div class="flex flex-col gap-2.5">
+                    <h4 id="connect-heading">Connect to the server</h4>
+                    <span class="p-s lg3:w-11/12 sm:w-full 2xs:w-11/12">Lorem ipsum dolor sit amet consectetur.
+                      Tincidunt pulvinar placerat ut enim. Molestie sit lorem
+                      senectus natoque aenean.</span>
+                  </div>
+                </div>
+                <a href="plan.html"
+                  class="button hover3 w-full lg:py-[15px] py-3 lg:absolute bottom-4  lg:invisible lg:opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-500"
+                  aria-label="Connect to VPN Server">Connect
+                  to Server</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== End of 2.3. VPN Setup Section ======== -->
+    <!-- ======== 2.4. VPN Advantages Section ======== -->
+    <section class="VPN-Advantages pb-12.5 sm:pb-18 lg:pb-25" aria-label="VPN Advantages">
+      <div class="Container">
+        <div class="flex flex-col lg:gap-18 sm:gap-10 gap-8 items-center">
+          <h2 id="vpn-advantages-heading" class="text-center 2xs:w-auto w-10/12">Why Should I Use a VPN?</h2>
+          <div class="flex flex-col lg:gap-12.5 sm:gap-10 gap-8">
+            <div class="flex flex-col lg:gap-12.5 sm:gap-9 gap-6 group" role="region"
+              aria-labelledby="advantage-01-title">
+              <div class="grid sm:grid-cols-12 md:gap-7.5 relative">
+                <div class="md:col-span-10 col-span-9">
+                  <div class="flex md:flex-row flex-col lg2:gap-16 md:gap-4 gap-3  relative">
+                    <h1 class="!font-bold text-transparent stroke-two" aria-hidden="true">01</h1>
+                    <div class="flex flex-col gap-6">
+                      <div class="flex flex-col md:gap-3 gap-2">
+                        <h3 id="advantage-01-title">Protect your privacy</h3>
+                        <p class="lg3:w-10/12 lg2:w-11/12">Lorem ipsum dolor sit amet consectetur. Sit urna ultricies
+                          convallis posuere metus sapien id nullam nunc. Quis justo condimentum adipiscing purus
+                          ultrices
+                          amet est pellentesque.</p>
+                      </div>
+                      <ul class="flex sm:flex-row flex-col sm:items-center lg:gap-8 md:gap-5 sm:gap-5 gap-2" role="list"
+                        aria-label="Privacy protection benefits">
+                        <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                          <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                          Block web trackers
+                        </li>
+                        <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                          <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                          Protect your identity online
+                        </li>
+                        <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                          <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                          Keep your data private
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md:col-span-2 sm:col-span-3 sm:flex justify-end md:items-center items-end">
+                  <div
+                    class="lg:w-33 sm:w-30 4xs:w-20 w-17 lg:h-33 sm:h-30 4xs:h-20 h-17 bg-gradient-to-bl from-blue1 to-[#53ACFF] flex items-center justify-center rounded-full sm:relative absolute 4xs:right-5 right-0 bottom-0"
+                    role="img" aria-label="Icon representing privacy protection">
+                    <figure class="w-fit">
+                      <img src="assets/images/icons/advantage-protection.svg" alt="Advantage Protection"
+                        class="lg:w-19 sm:w-17 4xs:w-10 w-9">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="w-full h-[1px] bg-[#697190] relative before:content[''] before:bg-blue1 before:w-0 before:h-[2px] before:absolute before:top-[-0.5px] group-hover:before:w-full before:transition-all before:duration-700">
+              </div>
+            </div>
+
+            <div class="flex flex-col lg:gap-12.5 sm:gap-9 gap-6 group" role="region"
+              aria-labelledby="advantage-02-title">
+              <div class="grid sm:grid-cols-12 md:gap-7.5 relative">
+                <div class="md:col-span-10 col-span-9">
+                  <div class="flex md:flex-row flex-col lg2:gap-16 md:gap-4 gap-3 relative">
+                    <h1 class="!font-bold text-transparent stroke-two" aria-hidden="true">02</h1>
+                    <div class="flex flex-col gap-6">
+                      <div class="flex flex-col md:gap-3 gap-2">
+                        <h3 id="advantage-02-title">Stay safe online</h3>
+                        <p class="lg3:w-10/12 lg2:w-11/12">Lorem ipsum dolor sit amet consectetur. Sit urna ultricies
+                          convallis posuere metus sapien id nullam nunc. Quis justo condimentum adipiscing purus
+                          ultrices
+                          amet est pellentesque.</p>
+                      </div>
+                      <ul class="flex sm:flex-row flex-col sm:items-center lg:gap-8 md:gap-5 sm:gap-5 gap-2" role="list"
+                        aria-label="Online safety benefits">
+                        <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                          <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                          Block malicious sites
+                        </li>
+                        <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                          <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                          Secure your online banking
+                        </li>
+                        <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                          <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                          Stay safe on public Wi-Fi
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md:col-span-2 sm:col-span-3 sm:flex justify-end md:items-center items-end">
+                  <div
+                    class="lg:w-33 sm:w-30 4xs:w-20 w-17 lg:h-33 sm:h-30 4xs:h-20 h-17 bg-gradient-to-bl from-blue1 to-[#53ACFF] flex items-center justify-center rounded-full sm:relative absolute 4xs:right-5 right-0 bottom-0"
+                    role="img" aria-label="Icon representing online safety">
+                    <figure class="w-fit">
+                      <img src="assets/images/icons/advantage-safety.svg" alt="Advantage Safety"
+                        class="lg:w-23 sm:w-20 4xs:w-13 w-11">
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="w-full h-[1px] bg-[#697190] relative before:content[''] before:bg-blue1 before:w-0 before:h-[2px] before:absolute before:top-[-0.5px] group-hover:before:w-full before:transition-all before:duration-700">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-12 md:gap-7.5 relative" role="region" aria-labelledby="advantage-03-title">
+              <div class="md:col-span-10 col-span-9">
+                <div class="flex md:flex-row flex-col lg2:gap-16 md:gap-4 gap-3  relative">
+                  <h1 class="!font-bold text-transparent stroke-two" aria-hidden="true">03</h1>
+                  <div class="flex flex-col gap-6">
+                    <div class="flex flex-col md:gap-3 gap-2">
+                      <h3 id="advantage-03-title">Access content abroad</h3>
+                      <p class="lg3:w-10/12 lg2:w-11/12">Lorem ipsum dolor sit amet consectetur. Sit urna ultricies
+                        convallis posuere metus sapien id nullam nunc. Quis justo condimentum adipiscing purus ultrices
+                        amet est pellentesque.</p>
+                    </div>
+                    <ul class="flex sm:flex-row flex-col sm:items-center lg:gap-8 md:gap-5 sm:gap-5 gap-2" role="list"
+                      aria-label="Content access benefits">
+                      <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                        <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                        Stream securely while traveling
+                      </li>
+                      <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                        <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                        Access your favorite content
+                      </li>
+                      <li class="lg:text-[16px] text-sm flex flex-row items-center lg:gap-3 gap-2" role="listitem">
+                        <i class="fa-regular fa-circle-check text-txtblue" aria-hidden="true"></i>
+                        Bypass internet censorship
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="md:col-span-2 sm:col-span-3 sm:flex justify-end md:items-center items-end">
+                <div
+                  class="lg:w-33 sm:w-30 4xs:w-20 w-17 lg:h-33 sm:h-30 4xs:h-20 h-17 bg-gradient-to-bl from-blue1 to-[#53ACFF] flex items-center justify-center rounded-full sm:relative absolute 4xs:right-5 right-0 bottom-0"
+                  role="img" aria-label="Icon representing content access">
+                  <figure class="w-fit">
+                    <img src="assets/images/icons/advantage-access-content-abroad.svg" alt="Advantage Content Abroad"
+                      class="lg:w-25 sm:w-23 4xs:w-14 w-12">
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== End of 2.4. VPN Advantages Section ======== -->
+    <!-- ======== 2.5. Cloud vpn solutions Section ======== -->
+    <section class="Cloud-vpn-solutions bg-custom lg:pt-33 sm:pt-25 pt-20 lg:pb-18 sm:pb-13 pb-8"
+      aria-label="Complete VPN and Cloud Solutions">
+      <div class="Container">
+        <div class="grid md:grid-cols-12 items-center sm:gap-12 gap-8">
+          <div class="md:col-span-6">
+            <div class="flex flex-col md:items-start sm:items-center md:text-start sm:text-center sm:gap-8.5 gap-5">
+              <div class="flex flex-col md:items-start sm:items-center sm:gap-4.5 gap-3">
+                <h1 class="lg:!text-[54px] lg2:!text-[60px] md:w-auto sm:w-7/12" role="heading" aria-level="1">
+                  Complete VPN and Cloud Solutions
+                </h1>
+                <p class="lg3:w-[86%] lg2:w-11/12 md:w-auto sm:w-11/12">
+                  Lorem ipsum dolor sit amet consectetur. Tincidunt pulvinar placerat ut enim. Molestie sit lorem
+                  senectus natoque aenean sed vitae nunc. Egestas eget viverra ornare semper amet pharetra lorem eget.
+                  Nulla sapien amet netus nisl eget eget. Eu purus et sed in sagittis mauris nullam convallis. Odio
+                  vitae faucibus purus sit molestie pharetra. Et tortor leo arcu urna purus sit donec tellus sapien.
+                </p>
+              </div>
+              <div class="flex 2xs:flex-row flex-col lg2:gap-17 md:gap-9 2xs:gap-14 gap-5" role="listgroup"
+                aria-label="VPN features">
+                <ul class="flex flex-col sm:gap-7 gap-5" role="list">
+                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                    <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
+                    Stable &amp; Reliable
+                  </li>
+                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                    <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
+                    24/7
+                    Live Support
+                  </li>
+                </ul>
+                <ul class="flex flex-col sm:gap-7 gap-5" role="list">
+                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                    <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
+                    Anonymous Access
+                  </li>
+                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                    <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
+                    120.1324.28 IPs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-6">
+            <div class="flex md:justify-end">
+              <figure class="md:w-fit w-full" role="img" aria-label="VPN and Cloud solutions illustration">
+                <img src="assets/images/index/vpn-solutions.png" alt="vpn-solutions" class="w-full">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== End of 2.5. Cloud vpn solutions Section ======== -->
+    <!-- ======== 2.6. Our Team Section ======== -->
+    <section class="Team sec-pad" aria-labelledby="team-heading">
+      <div class="Container">
+        <div class="flex flex-col lg:gap-22 sm:gap-14 gap-8">
+          <h2 id="team-heading" class="text-center">Why Should I Use a VPN?</h2>
+          <div class="grid sm:grid-cols-3 lg:gap-7.5 sm:gap-5 gap-6">
+            <div class="relative" aria-label="Team Member: Peter Konig, CEO & Co-Founder">
+              <figure class="w-full rounded-2xl overflow-hidden">
+                <img src="assets/images/team/team-1.png" alt="Peter Konig Image" class="w-full">
+              </figure>
+              <div
+                class="absolute md:bottom-6 sm:bottom-4 bottom-6 lg2:left-4/12 lg:left-24 md:left-22 sm:left-13 xs:left-40 2xs:left-35 3xs:left-30 4xs:left-28 left-23    text-center flex flex-col gap-1">
+                <span class="lg:text-2xl text-xl">Peter Konig</span>
+                <span class="text-sm">CEO &amp; Co-Founder</span>
+              </div>
+            </div>
+            <div class="relative" aria-label="Team Member: Emma Collins, UX/UI Designer">
+              <figure class="w-full rounded-2xl overflow-hidden">
+                <img src="assets/images/team/team-2.png" alt="Emma Collins Image" class="w-full">
+              </figure>
+              <div
+                class="absolute md:bottom-6 sm:bottom-4 bottom-6 lg2:left-4/12 lg:left-24 md:left-22 sm:left-13 xs:left-40 2xs:left-35 3xs:left-30 4xs:left-28 left-23    text-center flex flex-col gap-1">
+                <span class="lg:text-2xl text-xl">Emma Collins</span>
+                <span class="text-sm"> UX/UI Designer</span>
+              </div>
+            </div>
+            <div class="relative" aria-label="Team Member: Liam Carter, Lead Developer">
+              <figure class="w-full rounded-2xl overflow-hidden">
+                <img src="assets/images/team/team-3.png" alt="Liam Carter Image" class="w-full">
+              </figure>
+              <div
+                class="absolute md:bottom-6 sm:bottom-4 bottom-6 lg2:left-4/12 lg:left-24 md:left-22 sm:left-13 xs:left-40 2xs:left-35 3xs:left-30 4xs:left-28 left-23    text-center flex flex-col gap-1">
+                <span class="lg:text-2xl text-xl">Liam Carter</span>
+                <span class="text-sm">Lead Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== End of 2.6. Our Team Section ======== -->
+    <!-- ======== 2.7. Partners Section ======== -->
+    <section class="Partners pb-12.5 sm:pb-18 lg:pb-25" role="region" aria-labelledby="partners-heading">
+      <div class="flex flex-col lg:gap-12 gap-9">
+        <div class="Container">
+          <div class="flex flex-col items-center gap-2.5 text-center">
+            <h2 id="partners-heading">Trusted by tech experts</h2>
+            <p class="lg2:w-[49%] lg:w-7/12 md:w-8/12 sm:w-11/12">Lorem ipsum dolor sit amet consectetur. Tincidunt
+              pulvinar placerat ut enim. Molestie sit
+              lorem senectus natoque aenean sed vitae nunc.</p>
+          </div>
+        </div>
+
+        <div class="swiper w-full overflow-hidden" aria-hidden="true">
+          <div class="swiper-wrapper !ease-linear">
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-01.svg" alt="logoipsum-01" class="lg:w-42.5 sm:w-37 w-33">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-02.svg" alt="logoipsum-02" class="lg:w-45.5 sm:w-40 w-36">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-03.svg" alt="logoipsum-03" class="lg:w-42 sm:w-37 w-33">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-04.svg" alt="logoipsum-04" class="lg:w-33 sm:w-29 w-26">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-05.svg" alt="logoipsum-05" class="lg:w-40.5 sm:w-36 w-32">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-06.svg" alt="logoipsum-06" class="lg:w-48 sm:w-42 w-38">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-07.svg" alt="logoipsum-07" class="lg:w-25 sm:w-22 w-20">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-08.svg" alt="logoipsum-08" class="lg:w-39.5 sm:w-34 w-31">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-07.svg" alt="logoipsum-07" class="lg:w-25 sm:w-22 w-20">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-04.svg" alt="logoipsum-04" class="lg:w-33 sm:w-29 w-26">
+              </figure>
+            </div>
+            <div class="swiper-slide !w-auto" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/logoipsum-04.svg" alt="logoipsum-04" class="lg:w-33 sm:w-29 w-26">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== End of 2.7. Partners Section ======== -->
+    <!-- ======== 1.16 Footer Section ======== -->
+    <footer class="pb-8" aria-label="Website Footer">
+      <div class="flex flex-col sm:gap-12 gap-9">
+        <h2 class="text-center" id="start-now-heading">Let’s Start Now</h2>
+        <div class="bg-[url('../images/bg/footer-bg.png')] bg-no-repeat bg-center">
+          <div class="Container">
+            <div class="flex flex-col lg:gap-92.5 gap-75">
+              <div class="flex justify-center relative top-[-12px]">
+                <form
+                  class="3xs:border 3xs:border-white 3xs:rounded-[60px] 3xs:bg-bordercolor2 py-1.5 sm:pl-7.5 3xs:pl-5 3xs:pr-1.5 sm:w-110 w-full flex 3xs:flex-row flex-col 3xs:justify-between 3xs:items-center gap-4"
+                  aria-labelledby="start-now-heading" role="form">
+                  <input type="email" name="email" id="email" placeholder="Enter your email"
+                    class="h-full placeholder:text-sm placeholder-white text-sm 3xs:border-none border border-white 3xs:rounded-none rounded-[60px] 3xs:bg-transparent bg-bordercolor2 py-3 px-4 3xs:w-fit w-full"
+                    required aria-label="Enter your email address to subscribe">
+                  <button type="submit"
+                    class="button hover1 sm:py-4.5 3xs:py-3.5 py-5 sm:px-6 px-5 flex items-center justify-center"
+                    aria-label="Subscribe to newsletter">Subscribe</button>
+                </form>
+              </div>
+
+              <div>
+                <div class="flex sm:flex-row flex-col items-center sm:justify-between gap-7">
+                  <!-- Logo -->
+                  <a href="index.html" aria-label="ReimVPN homepage logo link">
+                    <figure class="w-fit">
+                      <img src="assets/images/logo.svg" alt="ReimVPN Logo" class="w-32 sm:w-36 md2:w-[185px]">
+                    </figure>
+                  </a>
+
+                  <ul class="flex items-center lg2:gap-13 md:gap-8 3xs:gap-2 gap-1 sm:pt-0 pt-6" role="menubar"
+                    aria-label="Footer navigation">
+                    <li><a href="index.html" role="menuitem"
+                        class="p-2 hover:text-txtblue transition-all duration-300">Home</a></li>
+                    <li><a href="about.html" role="menuitem"
+                        class="p-2 hover:text-txtblue transition-all duration-300">About</a></li>
+                    <li><a href="about.html" role="menuitem"
+                        class="p-2 hover:text-txtblue transition-all duration-300">Services</a></li>
+                    <li><a href="about.html" role="menuitem"
+                        class="p-2 hover:text-txtblue transition-all duration-300">Contact</a></li>
+                    <li><a href="about.html" role="menuitem"
+                        class="p-2 hover:text-txtblue transition-all duration-300">Blog</a></li>
+                  </ul>
+
+                  <div class="flex items-center md:gap-4 gap-3 border-l-2 md:pl-4 pl-2"
+                    aria-label="Download App Section">
+                    <p>Download the App</p>
+                    <a href="#" class="group" aria-label="Download on Google Play"><span
+                        class="w-8 h-8 bg-white flex items-center justify-center rounded-[6px] group-hover:bg-blue2 transition-all duration-300"><i
+                          class="fa-brands fa-google-play text-black text-lg group-hover:text-white"></i></span></a>
+                    <a href="#" class="group" aria-label="Download on Apple App Store"><span
+                        class="w-8 h-8 bg-white flex items-center justify-center rounded-[6px] group-hover:bg-blue2 transition-all duration-300"><i
+                          class="fa-brands fa-apple text-black text-2xl group-hover:text-white"></i></span></a>
+                  </div>
+                </div>
+
+                <hr class="!text-white/50 mt-6 mb-5">
+
+                <div class="flex sm:flex-row flex-col items-center justify-center gap-4"
+                  aria-label="Social media section">
+                  <span class="text-sm">Follow Us:</span>
+                  <div class="flex items-center gap-4">
+                    <a href="#" aria-label="Follow us on Facebook"
+                      class="border border-white/50 rounded-full md:w-10.5 w-9 md:h-10.5 h-9 flex items-center justify-center hover:bg-white transition-all duration-300 group"><i
+                        class="fa-brands fa-facebook-f md:text-lg text-sm text-white group-hover:text-black transition-all duration-300"></i></a>
+                    <a href="#" aria-label="Follow us on X (formerly Twitter)"
+                      class="border border-white/50 rounded-full md:w-10.5 w-9 md:h-10.5 h-9 flex items-center justify-center hover:bg-white transition-all duration-300 group"><i
+                        class="fa-brands fa-x-twitter md:text-lg text-sm text-white group-hover:text-black transition-all duration-300"></i></a>
+                    <a href="#" aria-label="Follow us on Instagram"
+                      class="border border-white/50 rounded-full md:w-10.5 w-9 md:h-10.5 h-9 flex items-center justify-center hover:bg-white transition-all duration-300 group"><i
+                        class="fa-brands fa-instagram md:text-lg text-sm text-white group-hover:text-black transition-all duration-300"></i></a>
+                    <a href="#" aria-label="Join us on Discord"
+                      class="border border-white/50 rounded-full md:w-10.5 w-9 md:h-10.5 h-9 flex items-center justify-center hover:bg-white transition-all duration-300 group"><i
+                        class="fa-brands fa-discord md:text-lg text-sm text-white group-hover:text-black transition-all duration-300"></i></a>
+                    <a href="#" aria-label="Connect with us on LinkedIn"
+                      class="border border-white/50 rounded-full md:w-10.5 w-9 md:h-10.5 h-9 flex items-center justify-center hover:bg-white transition-all duration-300 group"><i
+                        class="fa-brands fa-linkedin-in md:text-lg text-sm text-white group-hover:text-black transition-all duration-300"></i></a>
+                    <a href="#" aria-label="Watch us on YouTube"
+                      class="border border-white/50 rounded-full md:w-10.5 w-9 md:h-10.5 h-9 flex items-center justify-center hover:bg-white transition-all duration-300 group"><i
+                        class="fa-brands fa-youtube md:text-lg text-sm text-white group-hover:text-black transition-all duration-300"></i></a>
+                  </div>
+                </div>
+
+                <hr class="!text-white/50 my-5">
+
+                <div class="flex sm:flex-row flex-col items-center justify-center md:gap-11 sm:gap-7 gap-4"
+                  aria-label="Footer legal links and copyright">
+                  <span class="text-white/70 text-sm"><i class="fa-regular fa-copyright"></i> 2025 reimVPN. All rights
+                    reserved.</span>
+                  <div class="flex 3xs:flex-row flex-col items-center md:gap-11 sm:gap-7 3xs:gap-5 gap-3">
+                    <a href="#" class="p-s text-white/70 hover:text-white hover:border-b transition-all duration-300"
+                      aria-label="Privacy Policy link">Privacy Policy</a>
+                    <a href="#" class="p-s text-white/70 hover:text-white hover:border-b transition-all duration-300"
+                      aria-label="Terms of Service link">Terms of Service</a>
+                    <a href="#" class="p-s text-white/70 hover:text-white hover:border-b transition-all duration-300"
+                      aria-label="Cookies Settings link">Cookies Settings</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ======== End of 1.16 Footer Section ======== -->
+  </div>
+
+  <!-- Scripts -->
+  <!-- main javascript -->
+  <script src="assets/js/custom.js"></script>
+  <!-- aos animation of js -->
+  <!-- <script src="assets/js/aos.js"></script> -->
+  <!-- swiper Js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // AOS.init({
+    //     duration: 1000,
+    //     once: true,
+    // });
+  </script>
+</body>
+
+</html>
