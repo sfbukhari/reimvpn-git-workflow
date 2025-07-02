@@ -53,7 +53,7 @@ jobs:
           stylelint "assets/css/**/*.css"
 
       - name: Build Tailwind CSS
-        run: npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify
+        run: npx tailwindcss -i ./assets/css/input.css --minify
 
       - name: Upload Built Site
         uses: actions/upload-artifact@v4
