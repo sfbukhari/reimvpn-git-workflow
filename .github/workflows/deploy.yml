@@ -53,7 +53,7 @@ jobs:
           stylelint "assets/css/responsive.css" --fix
 
       - name: Build Tailwind CSS
-        run: npx tailwindcss -i ./assets/css/output.css -o --minify
+        run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
 
       - name: Upload Built Site
         uses: actions/upload-artifact@v4
@@ -61,24 +61,24 @@ jobs:
           name: built-site
           path: ReimVPN with Images/html/
 
-    deploy:
-      name: Deploy to GitHub Pages
-      needs: validate-and-build
-      runs-on: ubuntu-latest
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate-and-build
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Download Build Artifact
-          uses: actions/download-artifact@v4
-          with:
-            name: built-site
-            path: site
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: built-site
+          path: site
 
-        - name: Disable Jekyll
-          run: touch site/.nojekyll
+      - name: Disable Jekyll
+        run: touch site/.nojekyll
 
-        - name: Deploy to GitHub Pages
-          uses: peaceiris/actions-gh-pages@v4
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: site
-            publish_branch: gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site
+          publish_branch: gh-pages
