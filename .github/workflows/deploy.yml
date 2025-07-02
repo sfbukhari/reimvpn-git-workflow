@@ -37,6 +37,9 @@ jobs:
       - name: Lint JavaScript
         run: npx eslint assets/js/ assets/aos/aos.js --config eslint.config.mjs
 
+      - name: Auto-fix JavaScript with ESLint
+        run: npx eslint assets/js/ assets/aos/aos.js --fix --config eslint.config.mjs
+
       - name: Lint CSS
         run: |
           echo '{
