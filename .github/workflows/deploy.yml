@@ -1,3 +1,4 @@
+
 name: Validate and Deploy to GitHub Pages
 
 on:
@@ -24,23 +25,18 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies
+      - name: Install Project Dependencies
         run: npm ci
-        working-directory: ReimVPN with Images/html
 
       - name: Install Global Linters
         run: |
-          npm install -g htmlhint eslint@9 stylelint stylelint-config-standard stylelint-config-tailwindcss
+          npm install -g htmlhint eslint stylelint stylelint-config-standard stylelint-config-tailwindcss
 
       - name: Lint HTML Files
         run: htmlhint .
 
-      - name: Lint JavaScript (with ESLint v9 from local node_modules)
-        run: npx eslint assets/js/ assets/aos/aos.js
-        working-directory: ReimVPN with Images/html
-
-      - name: Auto-fix JavaScript with ESLint
-        run: npx eslint assets/js/ assets/aos/aos.js --fix --config eslint.config.mjs
+      - name: Lint JavaScript
+        run: eslint assets/js/ assets/aos/aos.js
 
       - name: Lint CSS
         run: |
