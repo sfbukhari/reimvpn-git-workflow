@@ -76,6 +76,9 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
+      - name: Disable Jekyll
+        run: touch site/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
