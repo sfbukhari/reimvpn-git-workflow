@@ -35,10 +35,10 @@ jobs:
         run: htmlhint .
 
       - name: Lint JavaScript
-        run: eslint assets/js/ assets/aos/aos.js
+        run: eslint assets/js/
 
       - name: Auto-fix JavaScript with ESLint
-        run: npx eslint assets/js/ assets/aos/aos.js --fix --config eslint.config.mjs
+        run: npx eslint assets/js/ --fix --config eslint.config.mjs
 
       - name: Lint CSS
         run: |
