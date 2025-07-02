@@ -43,7 +43,7 @@ jobs:
       - name: Lint CSS
         run: |
           echo '{
-            "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
+            "extends": ["stylelint-config-standard"],
             "rules": {
               "at-rule-no-unknown": [true, {
                 "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
