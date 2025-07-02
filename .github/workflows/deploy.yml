@@ -55,11 +55,16 @@ jobs:
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
 
+      - name: Copy Static Files to Output
+        run: |
+          mkdir -p ../../output
+          cp -r ./*.html ./assets ./images ../../output
+
       - name: Upload Built Site
         uses: actions/upload-artifact@v4
         with:
           name: built-site
-          path: ReimVPN with Images/html/
+          path: output/
 
   deploy:
     name: Deploy to GitHub Pages
