@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   // 1.1 Header section
   // Dropdown bar
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1.8. Services Slider Section
   // swiper 1
-  const swiper1 = new Swiper(".Services-slider .swiper1", {
+  const _swiper1 = new Swiper(".Services-slider .swiper1", {
     loop: true,
     speed: 8000,
     slidesPerView: 2,
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
   // swiper 2
-  const swiper2 = new Swiper(".Services-slider .swiper2", {
+  const _swiper2 = new Swiper(".Services-slider .swiper2", {
     loop: true,
     speed: 8000,
     slidesPerView: 2,
@@ -145,9 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
       function c(s) {
         i || (i = s);
         const d = Math.min((s - i) / a, 1);
-        (t.textContent = (n * d).toFixed(1)),
-          (e.style.strokeDashoffset = r * (1 - (o * d) / 100)),
-          d < 1 && requestAnimationFrame(c);
+        t.textContent = (n * d).toFixed(1);
+        e.style.strokeDashoffset = r * (1 - (o * d) / 100);
+        d < 1 && requestAnimationFrame(c);
       }
       requestAnimationFrame(c);
     }
@@ -161,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
         n || (n = e);
         const a = e - n,
           i = Math.min(Math.floor((a / 2e3) * r), r);
-        (t.textContent = i), i < r && requestAnimationFrame(o);
+        t.textContent = i;
+        i < r && requestAnimationFrame(o);
       }
       requestAnimationFrame(o);
     });
@@ -193,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // End of 1.10. Features Section
 
   //1.12. Testimonials Section
-  const swiper3 = new Swiper(".testimonial-swiper", {
+  const _swiper3 = new Swiper(".testimonial-swiper", {
     loop: true,
     speed: 500,
     pagination: {
@@ -217,10 +219,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (index === 0) {
       content.classList.add("open");
-      icon.innerHTML = "&#8722;";
+      icon.innerHTML = "\u2212";
     } else {
       content.classList.remove("open");
-      icon.innerHTML = "&#43;";
+      icon.innerHTML = "\u002B";
     }
 
     button.addEventListener("click", () => {
@@ -230,10 +232,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (btn === button) {
           c.classList.toggle("open");
-          i.innerHTML = c.classList.contains("open") ? "&#8722;" : "&#43;";
+          i.innerHTML = c.classList.contains("open") ? "\u2212" : "\u002B";
         } else {
           c.classList.remove("open");
-          i.innerHTML = "&#43;";
+          i.innerHTML = "\u002B";
         }
       });
     });
@@ -241,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // End of 1.13 FAQ's Section
 
   // 2.7. Partners Section
-  const swiper4 = new Swiper(".Partners .swiper", {
+  const _swiper4 = new Swiper(".Partners .swiper", {
     loop: true,
     speed: 2000,
     slidesPerView: "auto",
