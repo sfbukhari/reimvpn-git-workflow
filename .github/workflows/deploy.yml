@@ -34,11 +34,11 @@ jobs:
       - name: Lint HTML Files
         run: htmlhint .
 
-      # - name: Lint JavaScript
-      #   run: eslint assets/js/custom.js
+      - name: Lint JavaScript
+        run: eslint assets/js/custom.js
 
-      # - name: Auto-fix JavaScript with ESLint
-      #   run: npx eslint assets/js/custom.js --fix --config eslint.config.mjs
+      - name: Auto-fix JavaScript with ESLint
+        run: npx eslint assets/js/custom.js --fix --config eslint.config.mjs
 
       - name: Lint CSS
         run: |
