@@ -1,3 +1,4 @@
+/* global Swiper */
 
 document.addEventListener("DOMContentLoaded", function () {
   // 1.1 Header section
@@ -31,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Expose closeMenu for later use
+  let closeMenu;
+
   // Aside navigation
   (() => {
     const t = document.getElementById("navToggle"),
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
-    const closeMenu = () => {
+    closeMenu = () => {
       if (n && d && o) {
         n.classList.add("-translate-x-full");
         d.classList.add("hidden");
@@ -76,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1.8. Services Slider Section
   // swiper 1
-  const _swiper1 = new Swiper(".Services-slider .swiper1", {
+  new Swiper(".Services-slider .swiper1", {
     loop: true,
     speed: 8000,
     slidesPerView: 2,
@@ -92,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
   // swiper 2
-  const _swiper2 = new Swiper(".Services-slider .swiper2", {
+  new Swiper(".Services-slider .swiper2", {
     loop: true,
     speed: 8000,
     slidesPerView: 2,
@@ -141,33 +145,37 @@ document.addEventListener("DOMContentLoaded", function () {
       const r = 502.65,
         n = 62.5,
         o = 62.5,
-        a = 2e3;
+        a = 2000;
       let i = null;
-      function c(s) {
+
+      const c = (s) => {
         i || (i = s);
         const d = Math.min((s - i) / a, 1);
         t.textContent = (n * d).toFixed(1);
         e.style.strokeDashoffset = r * (1 - (o * d) / 100);
-        d < 1 && requestAnimationFrame(c);
-      }
+        if (d < 1) requestAnimationFrame(c);
+      };
       requestAnimationFrame(c);
     }
   }
+
   function animateCounters(e) {
     e.querySelectorAll(".speed-value").forEach((t) => {
       const r = parseInt(t.getAttribute("data-target"), 10);
       if (!r) return;
       let n = null;
-      function o(e) {
+
+      const o = (e) => {
         n || (n = e);
         const a = e - n,
-          i = Math.min(Math.floor((a / 2e3) * r), r);
+          i = Math.min(Math.floor((a / 2000) * r), r);
         t.textContent = i;
-        i < r && requestAnimationFrame(o);
-      }
+        if (i < r) requestAnimationFrame(o);
+      };
       requestAnimationFrame(o);
     });
   }
+
   const featuresSection = document.querySelector(".Features .items-end");
   featuresSection &&
     new IntersectionObserver(
@@ -181,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       { threshold: 0.25, rootMargin: "0px 0px -50px 0px" }
     ).observe(featuresSection);
+
   const servicesSection = document.querySelector(".Services-slider");
   servicesSection &&
     new IntersectionObserver(
@@ -195,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // End of 1.10. Features Section
 
   //1.12. Testimonials Section
-  const _swiper3 = new Swiper(".testimonial-swiper", {
+  new Swiper(".testimonial-swiper", {
     loop: true,
     speed: 500,
     pagination: {
@@ -243,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // End of 1.13 FAQ's Section
 
   // 2.7. Partners Section
-  const _swiper4 = new Swiper(".Partners .swiper", {
+  new Swiper(".Partners .swiper", {
     loop: true,
     speed: 2000,
     slidesPerView: "auto",
