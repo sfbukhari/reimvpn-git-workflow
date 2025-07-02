@@ -50,7 +50,7 @@ jobs:
               }]
             }
           }' > .stylelintrc.json
-          stylelint "assets/css/**/*.css" "assets/aos/*.css"
+          stylelint "assets/css/**/*.css"
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify
