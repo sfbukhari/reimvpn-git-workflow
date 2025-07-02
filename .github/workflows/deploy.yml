@@ -29,7 +29,7 @@ jobs:
 
       - name: Install Global Linters
         run: |
-          npm install -g htmlhint eslint stylelint stylelint-config-standard stylelint-config-tailwindcss
+          npm install -g htmlhint eslint@9 stylelint stylelint-config-standard stylelint-config-tailwindcss
 
       - name: Lint HTML Files
         run: htmlhint .
