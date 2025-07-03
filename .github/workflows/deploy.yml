@@ -73,6 +73,14 @@ jobs:
           name: built-site
           path: site
 
+      - name: Copy Files to Deploy Folder
+        run: |
+          mkdir -p deploy
+          cp index.html deploy/
+          cp -r assets deploy/
+          [ -d images ] && cp -r images deploy/ || echo "No images folder"
+          touch deploy/.nojekyll
+
       - name: Disable Jekyll
         run: touch site/.nojekyll
 
