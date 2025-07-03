@@ -1,0 +1,82 @@
+name: Validate and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate-and-build:
+    name: Validate & Build
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ReimVPN with Images/html
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Install Global Linters
+        run: |
+          npm install -g htmlhint eslint stylelint stylelint-config-standard stylelint-config-tailwindcss
+
+      - name: Lint HTML Files
+        run: htmlhint .
+
+      - name: Lint JavaScript
+        run: eslint assets/js/custom.js
+
+      - name: Auto-fix JavaScript with ESLint
+        run: npx eslint assets/js/custom.js --fix --config eslint.config.mjs
+
+      - name: Lint CSS
+        run: |
+          echo '{
+            "extends": ["stylelint-config-standard"],
+            "rules": {
+              "at-rule-no-unknown": [true, {
+                "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
+              }]
+            }
+          }' > .stylelintrc.json
+          stylelint "assets/css/responsive.css" --fix
+
+      - name: Build Tailwind CSS
+        run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
+
+      - name: Upload Built Site
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-site
+          path: ReimVPN with Images/html/
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate-and-build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: built-site
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site
+          publish_branch: gh-pages
+
