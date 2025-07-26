@@ -39,18 +39,24 @@ jobs:
       - name: Lint CSS
         run: |
           echo '{
-            "extends": ["stylelint-config-standard"],
+            "extends": [
+              "stylelint-config-standard",
+              "stylelint-config-tailwindcss"
+            ],
             "rules": {
               "at-rule-no-unknown": [true, {
-                "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
-              }]
+                "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "theme"]
+              }],
+              "custom-property-pattern": null,
+              "selector-class-pattern": null
             }
           }' > .stylelintrc.json
-          npx stylelint "assets/css/**/style.css" --fix
-          npx stylelint "assets/css/**/responsive.css" --fix
 
-          npx stylelint "assets/css/**/style.css" --max-warnings=0
-          npx stylelint "assets/css/**/responsive.css" --max-warnings=0
+          # Auto-fix CSS issues
+          npx stylelint "assets/css/**/*.css" --fix
+
+          # Fail build if any warnings or errors remain
+          npx stylelint "assets/css/**/*.css" --max-warnings=0
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
