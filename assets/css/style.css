@@ -1,8 +1,8 @@
-/* import font family is == Outfit ==*/
+/* import font family is == Outfit == */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/*Import TailwindCSS */
+/* Import TailwindCSS */
 @import "tailwindcss";
 
 /* Responsive Sheet of CSS */
@@ -29,12 +29,14 @@
   --color-blue1: #00ABF3;
   --color-blue2: #0C5192;
   --color-active: #52CAFE;
-  --color-bordercolor: #FFFFFF66;
+  --color-bordercolor: #FFF6;
+
   /* 40% */
   --color-bordercolor2: #ffffff2f;
+
   /* 20% */
-  --color-bg1-primary: linear-gradient(180deg, #000A21 70.41%, rgba(0, 18, 34, 0) 100%);
-  --color-bg2-secondary: linear-gradient(360deg, #070E2E -10.72%, rgba(7, 14, 46, 0) 87.75%);
+  --color-bg1-primary: linear-gradient(180deg, #000A21 70.41%, rgb(0 18 34 / 0%) 100%);
+  --color-bg2-secondary: linear-gradient(360deg, #070E2E -10.72%, rgb(7 14 46 / 0%) 87.75%);
 
   /* Font Family */
   --font-outfit: "Outfit", sans-serif;
@@ -149,7 +151,7 @@ body {
   font-family: var(--font-outfit);
   line-height: 1;
   background: #02061a;
-  color: #ffffff;
+  color: #fff;
   scroll-behavior: smooth;
 }
 
@@ -164,10 +166,10 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
 }
 
@@ -182,18 +184,21 @@ table {
 }
 
 select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+
+  /* -moz-user-select: none; */
+
+  /* -ms-user-select: none; */
+
+  /* user-select: none; */
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 0px 1000px transparent inset;
+  -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -210,9 +215,11 @@ iframe {
 }
 
 /* #endregion */
+
 /* =====  End of 01. Reset  ====== */
 
 /* #region ===== 02. Global Style ===== */
+
 /* ===== Typography ===== */
 @layer {
   .h-light {
@@ -314,8 +321,8 @@ iframe {
   .hover1::before {
     content: "";
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     z-index: -1;
     background: linear-gradient(265.85deg, #52CAFE -1.93%, #53ACFF 98.22%);
     height: 100%;
@@ -337,7 +344,7 @@ iframe {
 
   .hover2 {
     width: fit-content;
-    color: #ffffff;
+    color: #fff;
     background-color: #FFFFFF2E;
     padding: 14px 54px;
     transition: all 0.3s ease-in-out;
@@ -347,7 +354,7 @@ iframe {
   }
 
   .hover2:hover {
-    color: #ffffff;
+    color: #fff;
     background: var(--color-blue1);
   }
 
@@ -358,7 +365,7 @@ iframe {
   .hover3 {
     width: fit-content;
     color: #211C1C;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 15px 28px;
     transition: ease all 0.3s;
     display: inline-block;
@@ -367,7 +374,7 @@ iframe {
   }
 
   .hover3:hover {
-    color: #ffffff;
+    color: #fff;
     background-color: var(--color-dark-C);
   }
 
@@ -412,7 +419,7 @@ iframe {
   }
 
   .shadow-custom:hover {
-    box-shadow: inset 0px -20px 35px rgba(19, 31, 86, 0.5);
+    box-shadow: inset 0 -20px 35px rgb(19 31 86 / 50%);
   }
 }
 
@@ -436,14 +443,14 @@ iframe {
 }
 
 /* #endregion */
+
 /*  ===== End of 02. Global Style ===== */
 
 /* #region ===== Swiper styles ===== */
 @layer components {
-
   /* ===== 1.12 Testimonials section Swiper ===== */
   .swiper-pagination-bullet {
-    background-color: #ffffff !important;
+    background-color: #fff !important;
     opacity: 0.6 !important;
     width: 9px !important;
     height: 9px !important;
@@ -460,6 +467,7 @@ iframe {
 }
 
 /* #endregion */
+
 /* ===== End of Swiper styles ===== */
 
 /* #region ===== 1.13 FAQ's Section ===== */
@@ -478,4 +486,5 @@ iframe {
 }
 
 /* #endregion */
+
 /* ===== End of 1.13 FAQ's Section ===== */

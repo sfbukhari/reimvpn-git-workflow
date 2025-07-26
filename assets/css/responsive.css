@@ -3,7 +3,7 @@
   .h-light {
     line-height: 86px;
   }
-}
+
 
 @media (width <= 1024px) {
   .h-light {
@@ -144,3 +144,4 @@
 
 /* End of Curved backgrounds */
 
+}
