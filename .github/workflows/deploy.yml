@@ -52,13 +52,14 @@ jobs:
             }
           }' > .stylelintrc.json
 
+          # Fail build if any warnings or errors remain
+          npx stylelint "assets/css/**/style.css" --max-warnings=0
+          npx stylelint "assets/css/**/responsive.css" --max-warnings=0
+          
           # Auto-fix CSS issues
           npx stylelint "assets/css/**/style.css" --fix
           npx stylelint "assets/css/**/responsive.css" --fix
 
-          # Fail build if any warnings or errors remain
-          npx stylelint "assets/css/**/style.css" --max-warnings=0
-          npx stylelint "assets/css/**/responsive.css" --max-warnings=0
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
