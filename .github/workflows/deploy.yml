@@ -55,8 +55,8 @@ jobs:
             }
           }' > .stylelintrc.json
 
-          # npx stylelint "assets/css/style.css" --fix
-          # npx stylelint "assets/css/responsive.css" --fix
+          npx stylelint "assets/css/style.css" --fix
+          npx stylelint "assets/css/responsive.css" --fix
 
           npx stylelint "assets/css/style.css" --max-warnings=0
           npx stylelint "assets/css/responsive.css" --max-warnings=0
