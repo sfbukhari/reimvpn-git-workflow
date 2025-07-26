@@ -42,10 +42,11 @@ jobs:
             "extends": ["stylelint-config-standard"],
             "rules": {
               "at-rule-no-unknown": [true, {
-                "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
+                # "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
               }]
             }
           }' > .stylelintrc.json
+          npx stylelint "assets/css/responsive.css" --fix
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
