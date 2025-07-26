@@ -1,5 +1,6 @@
 /* import font family is == Outfit ==*/
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*Import TailwindCSS */
 @import "tailwindcss";
@@ -27,6 +28,7 @@
   --color-dark-C: #131F56;
   --color-blue1: #00ABF3;
   --color-blue2: #0C5192;
+  --color-active: #52CAFE;
   --color-bordercolor: #FFFFFF66;
   /* 40% */
   --color-bordercolor2: #ffffff2f;
@@ -36,6 +38,7 @@
 
   /* Font Family */
   --font-outfit: "Outfit", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
 /*
@@ -189,7 +192,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  background-color: #ffffff;
   -webkit-text-fill-color: #ffffff;
   -webkit-box-shadow: 0px 0px 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
@@ -206,10 +208,12 @@ label {
 iframe {
   width: 100%;
 }
+
 /* #endregion */
 /* =====  End of 01. Reset  ====== */
 
-/* ===== 02. Global Style ===== */
+/* #region ===== 02. Global Style ===== */
+/* ===== Typography ===== */
 @layer {
   .h-light {
     line-height: 100px;
@@ -285,8 +289,14 @@ iframe {
     outline: none;
     cursor: pointer;
   }
+
+  .site-wrapper {
+    max-width: 1920px;
+    margin: auto;
+  }
 }
 
+/* ===== Hovers ===== */
 @layer components {
   .hover1 {
     color: #020617;
@@ -314,29 +324,12 @@ iframe {
   }
 
   .hover1:hover::before {
-    right: -300px !important;
+    right: -700px !important;
   }
 
   .hover1:hover {
     color: var(--color-blue1);
   }
-
-  /* .hover1::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(265.85deg, #00ABF3 -1.93%, #0C5192 98.22%);
-    top: 0px;
-    left: -110%;
-    border-radius: 60px;
-    transition: all 0.3s ease-in-out;
-    z-index: -1;
-  } */
-
-  /* .hover1:hover::before {
-    left: 0px;
-  } */
 
   .hover1:active {
     filter: brightness(0.8);
@@ -381,90 +374,11 @@ iframe {
   .hover3:active {
     filter: brightness(0.8);
   }
-
-  .hover4 {
-    width: fit-content;
-    color: #ffff;
-    padding: 14px 54px;
-    transition: ease all 0.3s;
-    display: inline-block;
-    background-color: #141414;
-  }
-
-  .hover4:hover {
-    color: #ffffff;
-    background-color: #FF9900;
-  }
-
-  .hover4:active {
-    filter: brightness(0.8);
-  }
-
-}
-
-@layer components {
-
-  /* form validation modal */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-
-  #footerModal.active+.modal-overlay,
-  #ContactModal.active+.modal-overlay,
-  #FeedbackModal.active+.modal-overlay {
-    display: block;
-  }
-
-  #footerModal,
-  #ContactModal,
-  #FeedbackModal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-  }
-
-  #footerModal.active,
-  #ContactModal.active,
-  #FeedbackModal.active {
-    display: block;
-  }
-
-  #footerModal div,
-  #ContactModal div,
-  #FeedbackModal div {
-    width: 350px;
-    padding: 30px 0px;
-    border-radius: 20px;
-    background: #141414;
-    color: #ffff;
-  }
-
-  #footerModal figure,
-  #ContactModal figure,
-  #FeedbackModal figure {
-    width: fit-content;
-  }
-
-  #footerModal button,
-  #ContactModal button,
-  #FeedbackModal button {
-    padding: 8px 16px;
-  }
 }
 
 @layer components {
   .Container {
-    @apply lg:w-4/5 md2:w-[90%] w-[93%] mx-auto;
+    @apply lg:max-w-307 md2:w-[90%] w-[93%] mx-auto;
   }
 
   .sec-pad {
@@ -489,8 +403,16 @@ iframe {
     background: linear-gradient(360deg, #070E2E00 10.27%, #070e2e 87.75%);
   }
 
+  .bg-custom-3 {
+    background: linear-gradient(265.85deg, #00ABF3 -1.93%, #0C5192 98.22%);
+  }
+
   .word.highlight {
     color: #ffffff96 !important;
+  }
+
+  .shadow-custom:hover {
+    box-shadow: inset 0px -20px 35px rgba(19, 31, 86, 0.5);
   }
 }
 
@@ -512,10 +434,13 @@ iframe {
     -webkit-text-stroke: 3px #ffff;
   }
 }
-/* ===== End of 02. Global Style ===== */
 
-/* ===== Swiper styles ===== */
+/* #endregion */
+/*  ===== End of 02. Global Style ===== */
+
+/* #region ===== Swiper styles ===== */
 @layer components {
+
   /* ===== 1.12 Testimonials section Swiper ===== */
   .swiper-pagination-bullet {
     background-color: #ffffff !important;
@@ -533,9 +458,11 @@ iframe {
 
   /* ===== End of 1.12 Testimonials section Swiper ===== */
 }
+
+/* #endregion */
 /* ===== End of Swiper styles ===== */
 
-/* ===== 1.13 FAQ's Section ===== */
+/* #region ===== 1.13 FAQ's Section ===== */
 @layer components {
   .Faq .accordion-content {
     transition: all 0.6s ease-in-out;
@@ -549,4 +476,6 @@ iframe {
     opacity: 1;
   }
 }
+
+/* #endregion */
 /* ===== End of 1.13 FAQ's Section ===== */

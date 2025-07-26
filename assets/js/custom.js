@@ -1,7 +1,36 @@
-/* global Swiper */
-
 document.addEventListener("DOMContentLoaded", function () {
-  // 1.1 Header section
+  // #region AOS
+  AOS.init({
+    once: true,
+    duration: 1500,
+  });
+  // #endregion
+  // #region 1.1 Header section
+  // Active page link
+  const currentPage = location.pathname.split("/").pop();
+
+  const navLinks = document.querySelectorAll("nav a[href]");
+
+  navLinks.forEach((link) => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+
+    if (linkPage === currentPage) {
+      // Add shared active text color
+      link.classList.remove("text-gray-600");
+      link.classList.add("text-txtblue");
+
+      // If it's a desktop dropdown link, give it a white background
+      const isDesktopDropdownLink =
+        link.closest(".dropdown-menu") &&
+        window.getComputedStyle(link.closest(".dropdown-menu")).position ===
+          "absolute";
+
+      if (isDesktopDropdownLink) {
+        link.classList.add("!bg-white", "rounded");
+      }
+    }
+  });
+
   // Dropdown bar
   document.querySelectorAll(".dropdown").forEach((d) => {
     const m = d.querySelector(".dropdown-menu"),
@@ -32,10 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Expose closeMenu for later use
+  // Aside navigation
   let closeMenu;
 
-  // Aside navigation
   (() => {
     const t = document.getElementById("navToggle"),
       e = document.getElementById("navClose"),
@@ -72,72 +100,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   })();
 
-  // close when ESC is pressed
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
+  //#endregion
   // End of  1.1 Header section
 
-  // 1.8. Services Slider Section
-  // swiper 1
-  new Swiper(".Services-slider .swiper1", {
-    loop: true,
-    speed: 8000,
-    slidesPerView: 2,
-    freeMode: { enabled: true, momentum: false },
-    autoplay: { delay: 0, disableOnInteraction: false },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
-  // swiper 2
-  new Swiper(".Services-slider .swiper2", {
-    loop: true,
-    speed: 8000,
-    slidesPerView: 2,
-    freeMode: { enabled: true, momentum: false },
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-      reverseDirection: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-  });
+  // #region 1.9. Locations Section
+  const s = document.querySelector(".Locations");
 
-  function checkWordPositions() {
-    [
-      [".swiper1", 0.26],
-      [".swiper2", 0.65],
-    ].forEach(([s, p]) => {
-      const e = document.querySelector(s);
-      if (!e) return;
-      const t = window.innerWidth * p;
-      e.querySelectorAll(".word").forEach((o) => {
-        const r = o.getBoundingClientRect(),
-          c = r.left + r.width / 4;
-        Math.abs(c - t) < 50
-          ? o.classList.add("highlight")
-          : o.classList.remove("highlight");
+  if (s) {
+    const buttons = s.querySelectorAll('[role="button"]');
+
+    buttons.forEach((e) => {
+      const i = e.querySelector("i.fa-signal"),
+        d = e.querySelector("div.w-3");
+
+      e.addEventListener("click", () => {
+        buttons.forEach((btn) => {
+          const bi = btn.querySelector("i.fa-signal"),
+            bd = btn.querySelector("div.w-3");
+
+          bi?.classList.replace("text-txtblue", "text-[#444F7D]");
+          bd?.classList.remove("bg-[#2CD340]");
+        });
+
+        i?.classList.replace("text-[#444F7D]", "text-txtblue");
+        d?.classList.add("bg-[#2CD340]");
       });
     });
-    requestAnimationFrame(checkWordPositions);
   }
-  checkWordPositions();
-  // End of 1.8. Services Slider Section
+  //#endregion
+  // End of 1.9. Locations Section
 
-  // 1.10. Features Section
+  // #region 1.10. Features Section
   function animateArc() {
     const e = document.getElementById("progressArc"),
       t = document.getElementById("speedValue");
@@ -201,25 +197,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       { threshold: 0.25, rootMargin: "0px 0px -50px 0px" }
     ).observe(servicesSection);
+  //#endregion
   // End of 1.10. Features Section
 
-  //1.12. Testimonials Section
-  new Swiper(".testimonial-swiper", {
-    loop: true,
-    speed: 500,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-  });
-  // End of 1.12. Testimonials Section
-
-  // 1.13 FAQ's Section
+  // #region 1.13 FAQ's Section
   const buttons = document.querySelectorAll(".Faq #faq-wrapper .faq-toggle");
 
   buttons.forEach((button, index) => {
@@ -249,22 +230,170 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+  //#endregion
   // End of 1.13 FAQ's Section
 
-  // 2.7. Partners Section
-  new Swiper(".Partners .swiper", {
-    loop: true,
-    speed: 2000,
-    slidesPerView: "auto",
-    spaceBetween: 13,
-    freeMode: {
-      enabled: true,
-      momentum: false,
-    },
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-    },
+  // #region < Swiper Sliders >
+  // #region 1.8. Services Slider
+  if (typeof Swiper !== "undefined") {
+    // swiper 1
+    new Swiper(".Services-slider .swiper1", {
+      loop: true,
+      speed: 8000,
+      spaceBetween: 30,
+      freeMode: { enabled: true, momentum: false },
+      autoplay: { delay: 0, disableOnInteraction: false },
+      breakpoints: {
+        640: {
+          slidesPerView: 2.67,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
+    // swiper 2
+    new Swiper(".Services-slider .swiper2", {
+      loop: true,
+      speed: 8000,
+      spaceBetween: 30,
+      freeMode: { enabled: true, momentum: false },
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2.67,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  }
+
+  function checkWordPositions() {
+    [
+      [".swiper1", 0.26],
+      [".swiper2", 0.65],
+    ].forEach(([s, p]) => {
+      const e = document.querySelector(s);
+      if (!e) return;
+      const t = window.innerWidth * p;
+      e.querySelectorAll(".word").forEach((o) => {
+        const r = o.getBoundingClientRect(),
+          c = r.left + r.width / 4;
+        Math.abs(c - t) < 50
+          ? o.classList.add("highlight")
+          : o.classList.remove("highlight");
+      });
+    });
+    requestAnimationFrame(checkWordPositions);
+  }
+  checkWordPositions();
+
+  // #endregion End of 1.8. Services Slider
+
+  // #region 1.12. Testimonials Slider
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".testimonial-swiper", {
+      loop: true,
+      speed: 500,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+    });
+  }
+  // #endregion End of 1.12. Testimonials Slider
+
+  // #region 1.10 Partners Slider
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".Partners .swiper", {
+      loop: true,
+      speed: 2000,
+      slidesPerView: "auto",
+      spaceBetween: 13,
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      },
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+    });
+  }
+  // #endregion End of 1.10 Partners Slider
+
+  // #endregion < End of Swiper Sliders >
+
+  //#region < Success Modals >
+  const sections = [
+    { selector: ".Contact", modalId: "#contactModal" },
+    { selector: ".Feedback", modalId: "#feedbackModal" },
+    { selector: "footer", modalId: "#footerModal" },
+  ];
+
+  sections.forEach(({ selector, modalId }) => {
+    const section = document.querySelector(selector);
+    if (!section) return; // section itself must exist
+
+    const form = section.querySelector("form");
+    const modal = section.querySelector(modalId);
+    const modalCloseBtn = section.querySelector(".modalCloseBtn");
+    const modalDesc = section.querySelector(".modalDesc");
+    let modalTimer;
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nameInput = form.querySelector(
+          'input[name="yourname"], input[name="yourName"]'
+        );
+        const name = nameInput?.value?.trim();
+
+        // ✅ Only update modalDesc if name was entered
+        if (modalDesc && name) {
+          modalDesc.textContent = `Thank you, ${name}, for your submission.`;
+        }
+
+        form.reset();
+
+        if (modal) {
+          modal.classList.remove("invisible", "opacity-0");
+          modal.classList.add("opacity-100");
+
+          modalTimer = setTimeout(() => closeModal(modal), 3000);
+        }
+      });
+    }
+
+    if (modalCloseBtn && modal) {
+      modalCloseBtn.addEventListener("click", () => closeModal(modal));
+    }
+
+    if (modal) {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal(modal);
+      });
+    }
+
+    function closeModal(modalEl) {
+      modalEl.classList.remove("opacity-100");
+      modalEl.classList.add("opacity-0");
+      setTimeout(() => modalEl.classList.add("invisible"), 300);
+      clearTimeout(modalTimer);
+    }
   });
-  // 2.7. Partners Section
+
+  // #endregion < End of Success Modals >
 });
