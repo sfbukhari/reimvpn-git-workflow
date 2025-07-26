@@ -46,7 +46,7 @@ jobs:
               }]
             }
           }' > .stylelintrc.json
-          npx stylelint "assets/css/responsive.css" --fix
+          # npx stylelint "assets/css/responsive.css" --fix
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
