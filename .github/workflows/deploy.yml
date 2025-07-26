@@ -50,8 +50,7 @@ jobs:
               "custom-property-pattern": null,
               "selector-class-pattern": null,
               "declaration-block-no-duplicate-properties": [true, {
-                "ignoreDuplicates": true,
-                "ignore": ["consecutive-duplicates-with-different-values"]
+                "ignore": ["consecutive-duplicates"]
               }]
             }
           }' > .stylelintrc.json
