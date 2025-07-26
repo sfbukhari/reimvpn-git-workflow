@@ -27,15 +27,11 @@ jobs:
       - name: Install Project Dependencies
         run: npm ci
 
-      - name: Install Global Linters
-        run: |
-          npm install --save-dev eslint stylelint htmlhint stylelint-config-standard stylelint-config-tailwindcss
-
       - name: Lint HTML Files
-        run: htmlhint .
+        run: npx htmlhint .
 
       - name: Lint JavaScript
-        run: eslint assets/js/custom.js
+        run: npx eslint assets/js/custom.js
 
       - name: Auto-fix JavaScript with ESLint
         run: npx eslint assets/js/custom.js --fix --config eslint.config.mjs
@@ -50,7 +46,7 @@ jobs:
               }]
             }
           }' > .stylelintrc.json
-          stylelint "assets/css/responsive.css" --fix
+          npx stylelint "assets/css/responsive.css" --fix
 
       - name: Build Tailwind CSS
         run: npx tailwindcss -i ./assets/css/output.css -o ./assets/css/main.css --minify
