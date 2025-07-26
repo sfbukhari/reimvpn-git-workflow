@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReimVPN</title>
+  <title>ReimVPN - Home</title>
 
   <!-- favicon -->
   <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
   <!-- Tailwind and other styles -->
   <link rel="stylesheet" href="assets/css/output.css">
+  <!-- fonts awesome CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/aos/aos.css">
+  <!-- css of AOS -->
+  <link rel="stylesheet" href="assets/css/aos.css" />
   <!-- swiper Js-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
   <div class="site-wrapper">
     <!-- ======== 1.1. Header Section ======== -->
-    <header class="pt-3 md2:pt-5 relative">
+    <header class="pt-3 md2:pt-5 relative z-100">
       <nav aria-label="Main navigation">
         <div class="Container">
           <div class="flex items-center justify-between">
@@ -57,7 +59,7 @@
                   </button>
                   <ul
                     class="dropdown-menu absolute top-full right-0 w-52 bg-gradient-to-r from-blue1 to-blue2 overflow-hidden max-h-0 invisible rounded shadow-md z-50 transition-all duration-300 ease-in-out"
-                    role="menu" aria-hidden="true">
+                    role="menu">
                     <li><a href="contact.html" role="menuitem" class="block p-2 px-3 hover:bg-blue2 rounded">Contact</a>
                     </li>
                     <li><a href="faq.html" role="menuitem" class="block p-2 px-3 hover:bg-blue2 rounded">FAQ's</a></li>
@@ -73,7 +75,7 @@
                   </ul>
                 </li>
 
-                <li><a href="index.html" class="hover1 !py-3 !px-5 button" role="menuitem">Get Started</a></li>
+                <li><a href="about.html#vpnSetup" class="hover1 !py-3 !px-5 button" role="menuitem">Get Started</a></li>
               </ul>
             </div>
           </div>
@@ -85,9 +87,15 @@
         <!-- Mobile Menu Drawer (From Left) -->
         <div id="mobileMenu"
           class="fixed top-0 left-0 h-full w-60 xs:w-64 bg-dark-B shadow-lg transform -translate-x-full transition-transform duration-300 z-50 md2:hidden"
-          role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle" aria-hidden="true">
-          <div class="p-5 pt-11 flex flex-col gap-7 relative">
+          role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+          <div class="p-5 pt-4.5 flex flex-col gap-7 relative" role="menubar">
             <h2 id="mobileMenuTitle" class="sr-only">Mobile Menu</h2>
+            <!-- Logo -->
+            <a href="index.html" aria-label="ReimVPN Home">
+              <figure class="w-fit">
+                <img src="assets/images/logo.svg" alt="ReimVPN Logo" class="w-32 sm:w-36 md2:w-[185px]">
+              </figure>
+            </a>
             <button id="navClose" aria-label="Close mobile menu"
               class="button absolute top-4 right-4 hover:bg-blue2 bg-blue1 h-8 w-8 flex items-center justify-center rounded transition-all duration-300">
               <i class="fa-solid fa-xmark text-2xl md:text-2xl" aria-hidden="true"></i>
@@ -109,8 +117,7 @@
                   aria-expanded="false" aria-controls="mobileDropdown" role="menuitem">
                   Pages <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
                 </button>
-                <div id="mobileDropdown" class="max-h-0 overflow-hidden transition-all duration-300" role="menu"
-                  aria-hidden="true">
+                <div id="mobileDropdown" class="max-h-0 overflow-hidden transition-all duration-300" role="menu">
 
                   <a href="blogs.html" role="menuitem"
                     class="block p-2 pl-4 hover:text-txtblue transition-all duration-300">Blogs</a>
@@ -124,7 +131,7 @@
                 </div>
               </div>
             </div>
-            <a href="about.html" class="hover1 button" role="menuitem">Get Started</a>
+            <a href="about.html#vpnSetup" class="hover1 button" role="menuitem">Get Started</a>
           </div>
         </div>
 
@@ -132,102 +139,113 @@
     </header>
     <!-- ======== End of 1.1. Header Section ======== -->
     <!-- ======== 1.2. Hero Section ======== -->
-    <section class="Hero sec-pad bg-[url('../images/bg/hero-bg.png')] bg-no-repeat bg-center" aria-label="Hero Section">
+    <section class="Hero sec-pad bg-[url('../images/bg/hero-bg.webp')] bg-no-repeat bg-center"
+      aria-label="Hero Section">
+      <div
+        class="absolute inset-0 z-0 max-w-480 mx-auto lg:h-125 md2:h-94 md:h-70 sm:h-82 2xs:h-123 4xs:h-143 h-150 bg-[linear-gradient(180deg,#000A21_70.41%,rgba(0,18,34,0)_100%)]">
+      </div>
       <div class="Container">
-        <div class="flex flex-col gap-2.5 lg2:pb-36 sm:pb-24 pb-14">
-          <div class="flex items-center justify-center">
-            <div class="relative left-7 flex items-center justify-center z-10" role="group" aria-label="User Avatars">
-              <figure class="w-fit" role="img" aria-label="User avatar 1">
-                <img src="assets/images/index/hero-img-1.png" alt="User avatar 1"
-                  class="rounded-full border sm:w-[37px] w-[32px] sm:h-[37px] h-[32px]">
-              </figure>
-              <figure class="w-fit relative right-3.5" role="img" aria-label="User avatar 2">
-                <img src="assets/images/index/hero-img-2.png" alt="User avatar 2"
-                  class="rounded-full border sm:w-[37px] w-[32px] sm:h-[37px] h-[32px]">
-              </figure>
-              <figure class="w-fit relative right-7" role="img" aria-label="User avatar 3">
-                <img src="assets/images/index/hero-img-3.png" alt="User avatar 3"
-                  class="rounded-full border sm:w-[37px] w-[32px] sm:h-[37px] h-[32px]">
-              </figure>
+        <div class="relative z-10">
+          <div data-aos="fade-up" class="flex flex-col gap-2.5 lg2:pb-36 sm:pb-24 pb-14">
+            <div class="flex items-center justify-center">
+              <div class="relative left-7 flex items-center justify-center z-10" role="group" aria-label="User Avatars">
+                <figure class="w-fit" role="img" aria-label="User avatar 1">
+                  <img src="assets/images/index/hero-img-1.webp" alt="User avatar 1"
+                    class="rounded-full border sm:w-[37px] w-[32px] sm:h-[37px] h-[32px]">
+                </figure>
+                <figure class="w-fit relative right-3.5" role="img" aria-label="User avatar 2">
+                  <img src="assets/images/index/hero-img-2.webp" alt="User avatar 2"
+                    class="rounded-full border sm:w-[37px] w-[32px] sm:h-[37px] h-[32px]">
+                </figure>
+                <figure class="w-fit relative right-7" role="img" aria-label="User avatar 3">
+                  <img src="assets/images/index/hero-img-3.webp" alt="User avatar 3"
+                    class="rounded-full border sm:w-[37px] w-[32px] sm:h-[37px] h-[32px]">
+                </figure>
+              </div>
+              <div
+                class="border border-bordercolor rounded-3xl sm:py-3 py-2.5 sm:pr-5 pr-4 sm:pl-10 pl-9 relative right-7"
+                role="note" aria-label="Trusted by over 12,000 users">
+                <p class="p-s">Trusted by 12K+ Users</p>
+              </div>
             </div>
-            <div
-              class="border border-bordercolor rounded-3xl sm:py-3 py-2.5 sm:pr-5 pr-4 sm:pl-10 pl-9 relative right-7"
-              role="note" aria-label="Trusted by over 12,000 users">
-              <p class="p-s">Trusted by 12K+ Users</p>
+            <div class="flex flex-col gap-7 items-center text-center">
+              <div class="flex flex-col items-center justify-center gap-3">
+                <h1 class="lg2:w-[60%] lg:w-[79%] md:w-[56%] sm:w-[72%] w-[97%]" aria-level="1">
+                  Security you can rely on. The VPN you can trust.
+                </h1>
+                <p class="lg3:w-[40%] lg2:w-[45%] md:w-[52%] sm:w-[65%] w-[97%]">
+                  Lorem ipsum dolor sit amet consectetur. Ac lacus quis suspendisse tortor. Velit in sed laoreet nunc
+                  est.
+                  Volutpat montes at neque mauris amet augue tellus morbi lobortis.
+                </p>
+              </div>
+              <a href="about.html" class="hover1 button" aria-label="Get started with our VPN services">Get
+                Started</a>
             </div>
           </div>
-          <div class="flex flex-col gap-7 items-center text-center">
-            <div class="flex flex-col items-center justify-center gap-3">
-              <h1 class="lg2:w-[60%] lg:w-[79%] md:w-[56%] sm:w-[72%] w-[97%]" role="heading" aria-level="1">
-                Security you can rely on. The VPN you can trust.
-              </h1>
-              <p class="lg3:w-[40%] lg2:w-[45%] md:w-[52%] sm:w-[65%] w-[97%]">
-                Lorem ipsum dolor sit amet consectetur. Ac lacus quis suspendisse tortor. Velit in sed laoreet nunc est.
-                Volutpat montes at neque mauris amet augue tellus morbi lobortis.
-              </p>
+          <div class="grid sm:grid-cols-12 lg2:gap-7 gap-5 self-start lg:items-start sm:items-end" role="region"
+            aria-label="Features Section">
+            <div class="sm:col-span-7">
+              <div data-aos="fade-up"
+                class="bg-gradient-to-l from-blue1 to-blue2 py-8 px-6 sm:pt-9 sm:pb-8 sm:px-10 rounded-[30px] flex flex-col gap-4 lg2:mb-7 sm:mb-5"
+                role="group" aria-label="Ultimate privacy protection">
+                <figure class="w-fit" role="img" aria-label="Password protection icon">
+                  <img src="assets/images/icons/hero-password-protection.svg" alt="Password protection icon"
+                    class="lg:w-40 sm:w-32 w-28">
+                </figure>
+                <div class="flex flex-col gap-2.5">
+                  <h3 aria-level="2">Ultimate privacy protection</h3>
+                  <p class="lg2:w-[88%]">Access your favorite content and websites anytime, anywhere with no buffering
+                    and
+                    no geo-blocked restrictions.</p>
+                </div>
+              </div>
             </div>
-            <a href="about.html" class="hover1 button" role="link" aria-label="Get started with our VPN services">Get
-              Started</a>
-          </div>
-        </div>
-        <div class="grid sm:grid-cols-12 lg2:gap-7 gap-5 self-start" role="region" aria-label="Features Section">
-          <div class="sm:col-span-7">
-            <div
-              class="bg-gradient-to-l from-blue1 to-blue2 py-8 px-6 sm:pt-9 sm:pb-8 sm:px-10 rounded-[30px] flex flex-col gap-4 lg2:mb-7 sm:mb-5"
-              role="group" aria-label="Ultimate privacy protection">
-              <figure class="w-fit" role="img" aria-label="Password protection icon">
-                <img src="assets/images/icons/hero-password-protection.svg" alt="Password protection icon"
-                  class="lg:w-40 sm:w-32 w-28">
-              </figure>
-              <div class="flex flex-col gap-2.5">
-                <h3 role="heading" aria-level="2">Ultimate privacy protection</h3>
-                <p class="lg2:w-[88%]">Access your favorite content and websites anytime, anywhere with no buffering and
-                  no geo-blocked restrictions.</p>
+            <div class="sm:col-span-5">
+              <div data-aos="fade-up"
+                class="bg-dark-C rounded-[30px] py-8 px-6 sm:p-10 flex flex-col gap-4 relative lg2:top-[270px] md2:top-64 top-0 lg2:mb-0 mb-5"
+                role="group" aria-label="Ultra secure servers">
+                <figure class="w-fit" role="img" aria-label="Secure network icon">
+                  <img src="assets/images/icons/hero-secure-network.svg" alt="Secure network icon"
+                    class="lg:w-[133px] sm:w-24 w-20">
+                </figure>
+                <div class="flex flex-col gap-2.5">
+                  <h3 class="lg:!text-[35px] lg2:!text-[38px]" aria-level="2">Ultra secure servers</h3>
+                  <p class="lg2:w-[88%]">Access your favorite content and websites anytime, anywhere with no buffering
+                    and
+                    no geo-blocked restrictions.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="sm:col-span-5">
-            <div
-              class="bg-dark-C rounded-[30px] py-8 px-6 sm:p-10 flex flex-col gap-4 relative lg2:top-[270px] md2:top-64 top-0 lg2:mb-0 mb-5"
-              role="group" aria-label="Ultra secure servers">
-              <figure class="w-fit" role="img" aria-label="Secure network icon">
-                <img src="assets/images/icons/hero-secure-network.svg" alt="Secure network icon"
-                  class="lg:w-[133px] sm:w-24 w-20">
-              </figure>
-              <div class="flex flex-col gap-2.5">
-                <h3 class="lg:!text-[35px] lg2:!text-[38px]" role="heading" aria-level="2">Ultra secure servers</h3>
-                <p class="lg2:w-[88%]">Access your favorite content and websites anytime, anywhere with no buffering and
-                  no geo-blocked restrictions.</p>
+          <div class="grid sm:grid-cols-12 lg2:gap-7 gap-5" role="region" aria-label="Data Privacy Highlights">
+            <div class="md2:col-span-4 sm:col-span-6 order-2 sm:order-1">
+              <div data-aos="fade-up"
+                class="bg-dark-C py-8 px-6 sm:py-6 sm:px-8 lg2:px-10 rounded-[30px] flex flex-col gap-4" role="group"
+                aria-label="Protect your data">
+                <figure class="w-fit" role="img" aria-label="Incognito mode icon">
+                  <img src="assets/images/icons/hero-incognito-mode.svg" alt="Incognito mode icon"
+                    class="lg:w-[78px] w-16">
+                </figure>
+                <div class="flex flex-col gap-1.5">
+                  <h4 aria-level="3">Protect your data</h4>
+                  <p class="p-s">Access your favorite content and websites anytime, anywhere with no buffering and no
+                    geo-blocked restrictions.</p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="grid sm:grid-cols-12 lg2:gap-7 gap-5" role="region" aria-label="Data Privacy Highlights">
-          <div class="md2:col-span-4 sm:col-span-6 order-2 sm:order-1">
-            <div class="bg-dark-C py-8 px-6 sm:py-6 sm:px-8 lg2:px-10 rounded-[30px] flex flex-col gap-4" role="group"
-              aria-label="Protect your data">
-              <figure class="w-fit" role="img" aria-label="Incognito mode icon">
-                <img src="assets/images/icons/hero-incognito-mode.svg" alt="Incognito mode icon"
-                  class="lg:w-[78px] w-16">
-              </figure>
-              <div class="flex flex-col gap-1.5">
-                <h4 role="heading" aria-level="3">Protect your data</h4>
-                <p class="p-s">Access your favorite content and websites anytime, anywhere with no buffering and no
-                  geo-blocked restrictions.</p>
-              </div>
-            </div>
-          </div>
-          <div class="md2:col-span-3 sm:col-span-6 order-1 sm:order-2">
-            <div
-              class="bg-gradient-to-l from-blue1 to-blue2 rounded-[30px] py-8 px-6 sm:pt-[26px] sm:pb-6 sm:px-6 flex flex-col gap-4"
-              role="group" aria-label="Data Encryption">
-              <figure class="w-fit" role="img" aria-label="Encryption key icon">
-                <img src="assets/images/icons/hero-encryption-key.svg" alt="Encryption key icon" class="lg:w-32 w-28">
-              </figure>
-              <div class="flex flex-col gap-1.5">
-                <h4 role="heading" aria-level="3">Data Encryption</h4>
-                <p class="p-s">Access your favorite content and websites anytime, anywhere with no buffering and no
-                  geo-blocked restrictions.</p>
+            <div class="md2:col-span-3 sm:col-span-6 order-1 sm:order-2">
+              <div data-aos="fade-up"
+                class="bg-gradient-to-l from-blue1 to-blue2 rounded-[30px] py-8 px-6 sm:pt-[26px] sm:pb-6 sm:px-6 flex flex-col gap-4"
+                role="group" aria-label="Data Encryption">
+                <figure class="w-fit" role="img" aria-label="Encryption key icon">
+                  <img src="assets/images/icons/hero-encryption-key.svg" alt="Encryption key icon" class="lg:w-32 w-28">
+                </figure>
+                <div class="flex flex-col gap-1.5">
+                  <h4 aria-level="3">Data Encryption</h4>
+                  <p class="p-s">Access your favorite content and websites anytime, anywhere with no buffering and no
+                    geo-blocked restrictions.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -239,57 +257,64 @@
     <section class="Browser-support" aria-label="Compatible Browsers">
       <div class="Container">
         <div class="flex flex-col items-center md2:gap-10 gap-8">
-          <h4 role="heading" aria-level="2">Compatible Browsers</h4>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <div class="flex flex-row items-center justify-center gap-5" role="group" aria-label="Browser Icons Row 1">
-              <div
-                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl">
+          <h4 aria-level="2">Compatible Browsers</h4>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5 flex-wrap">
+            <div class="flex flex-row items-center justify-center gap-5 flex-wrap" role="group"
+              aria-label="Browser Icons Row 1">
+              <div data-aos="fade-zoom-in"
+                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300">
                 <figure class="w-fit" role="img" aria-label="Vivaldi Browser Icon">
-                  <img src="assets/images/icons/vivaldi-icon.svg" alt="vivaldi-icon" class="lg2:w-[71px] md-w-16 w-12">
+                  <img src="assets/images/icons/vivaldi-icon.svg" alt="vivaldi-icon"
+                    class="lg2:w-[71px] md-w-16 w-12 group-hover:scale-108 transition-all duration-300">
                 </figure>
               </div>
-              <div
-                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl">
+              <div data-aos="fade-zoom-in"
+                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300">
                 <figure class="w-fit" role="img" aria-label="Brave Browser Icon">
-                  <img src="assets/images/icons/brave-icon.svg" alt="brave-icon" class="lg2:w-[67px] md:w-14 w-10">
+                  <img src="assets/images/icons/brave-icon.svg" alt="brave-icon"
+                    class="lg2:w-[67px] md:w-14 w-10 group-hover:scale-108 transition-all duration-300">
                 </figure>
               </div>
-              <div
-                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl">
+              <div data-aos="fade-zoom-in"
+                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300">
                 <figure class="w-fit" role="img" aria-label="Opera Browser Icon">
-                  <img src="assets/images/icons/opera-icon.svg" alt="opera-icon" class="lg2:w-20 md:w-16 w-12">
+                  <img src="assets/images/icons/opera-icon.svg" alt="opera-icon"
+                    class="lg2:w-20 md:w-16 w-12 group-hover:scale-108 transition-all duration-300">
                 </figure>
               </div>
             </div>
 
-            <div class="flex flex-row items-center justify-center gap-5" role="group" aria-label="Browser Icons Row 2">
-              <div
-                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl">
+            <div class="flex flex-row items-center justify-center gap-5 flex-wrap" role="group"
+              aria-label="Browser Icons Row 2">
+              <div data-aos="fade-zoom-in"
+                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300">
                 <figure class="w-fit" role="img" aria-label="Microsoft Edge Browser Icon">
                   <img src="assets/images/icons/microsoft-edge-icon.svg" alt="microsoft-edge-icon"
-                    class="lg2:w-20 md:w-16 w-12">
+                    class="lg2:w-20 md:w-16 w-12 group-hover:scale-108 transition-all duration-300">
                 </figure>
               </div>
-              <div
-                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl">
+              <div data-aos="fade-zoom-in"
+                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300">
                 <figure class="w-fit" role="img" aria-label="Safari Browser Icon">
-                  <img src="assets/images/icons/safari-icon.svg" alt="safari-icon" class="lg2:w-20 md:w-16 w-12">
+                  <img src="assets/images/icons/safari-icon.svg" alt="safari-icon"
+                    class="lg2:w-20 md:w-16 w-12 group-hover:scale-108 transition-all duration-300">
                 </figure>
               </div>
-              <div
-                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl">
+              <div data-aos="fade-zoom-in"
+                class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300">
                 <figure class="w-fit" role="img" aria-label="Mozilla Firefox Browser Icon">
                   <img src="assets/images/icons/mozilla-firefox-icon.svg" alt="mozilla-firefox-icon"
-                    class="lg2:w-[75px] md:w-16 w-12">
+                    class="lg2:w-[75px] md:w-16 w-12 group-hover:scale-108 transition-all duration-300">
                 </figure>
               </div>
             </div>
 
-            <div
-              class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl"
+            <div data-aos="fade-zoom-in"
+              class="lg3:w-[150px] lg2:w-[140px] md:w-28 w-21 lg3:h-[150px] lg2:h-[140px] md:h-28 h-21 flex items-center justify-center bg-dark-A border border-bordercolor2 rounded-3xl group shadow-custom transition-all duration-300"
               role="group" aria-label="Browser Icons Row 3">
               <figure class="w-fit" role="img" aria-label="Google Chrome Browser Icon">
-                <img src="assets/images/icons/chrome-icon.svg" alt="chrome-icon" class="lg2:w-20 md:w-16 w-12">
+                <img src="assets/images/icons/chrome-icon.svg" alt="chrome-icon"
+                  class="lg2:w-20 md:w-16 w-12 group-hover:scale-108 transition-all duration-300">
               </figure>
             </div>
 
@@ -302,8 +327,8 @@
     <section class="DNS-feature sec-pad" aria-label="VPN Services with DNS System">
       <div class="Container">
         <div class="flex flex-col lg:gap-15 sm:gap-10 gap-7">
-          <div class="flex flex-col items-center text-center lg:gap-5 gap-3">
-            <h1 class="lg2:w-10/12 lg:w-full md:w-9/12 xs:w-11/12" role="heading" aria-level="1">
+          <div data-aos="fade-down" class="flex flex-col items-center text-center lg:gap-5 gap-3">
+            <h1 class="lg2:w-10/12 lg:w-full md:w-9/12 xs:w-11/12" aria-level="1">
               World's Best VPN Services That Provide Own DNS System
             </h1>
             <p class="lg3:w-[62%] lg2:w-8/12 md:w-10/12 sm:w-[80%] lg:pb-0 pb-3">
@@ -312,11 +337,11 @@
               massa sed luctus. Eu eu enim praesent purus laoreet porttitor. Orci sagittis malesuada viverra mauris erat
               id a odio eu. Morbi viverra id faucibus sit quis augue turpis phasellus aliquet.
             </p>
-            <a href="about.html" class="button hover1">Get Started</a>
+            <a href="about.html#vpnSetup" class="button hover1">Get Started</a>
           </div>
           <div class="flex justify-center">
             <figure class="w-fit" role="img" aria-label="DNS system shown on Mac and iPhone">
-              <img src="assets/images/index/dns-mac-iphone.png" alt="dns-mac-iphone" class="w-full">
+              <img src="assets/images/index/dns-mac-iphone.webp" alt="dns-mac-iphone" class="w-full">
             </figure>
           </div>
         </div>
@@ -328,18 +353,18 @@
       <div class="Container">
         <div class="flex sm:flex-row flex-col items-center gap-7">
           <div class="flex items-center gap-7" role="group" aria-label="First row of key benefits icons">
-            <figure class="w-fit" role="img" aria-label="Key benefits icon 1">
+            <figure data-aos="zoom-in" class="w-fit" role="img" aria-label="Key benefits icon 1">
               <img src="assets/images/icons/key-benefits-1.svg" alt="key-benefits-1" class="w-60">
             </figure>
-            <figure class="w-fit" role="img" aria-label="Key benefits icon 2">
+            <figure data-aos="zoom-in" class="w-fit" role="img" aria-label="Key benefits icon 2">
               <img src="assets/images/icons/key-benefits-2.svg" alt="key-benefits-2" class="w-72">
             </figure>
           </div>
           <div class="flex items-center gap-7" role="group" aria-label="Second row of key benefits icons">
-            <figure class="w-fit" role="img" aria-label="Key benefits icon 3">
+            <figure data-aos="zoom-in" class="w-fit" role="img" aria-label="Key benefits icon 3">
               <img src="assets/images/icons/key-benefits-3.svg" alt="key-benefits-3" class="w-[400px]">
             </figure>
-            <figure class="w-fit" role="img" aria-label="Key benefits icon 4">
+            <figure data-aos="zoom-in" class="w-fit" role="img" aria-label="Key benefits icon 4">
               <img src="assets/images/icons/key-benefits-4.svg" alt="key-benefits-4" class="w-80">
             </figure>
           </div>
@@ -348,14 +373,15 @@
     </section>
     <!-- ======== End of 1.5. Key Benefits Section ======== -->
     <!-- ======== 1.6. Cloud vpn solutions Section ======== -->
-    <section class="Cloud-vpn-solutions bg-custom pb-0 lg:pt-33 sm:pt-25 pt-20"
+    <section class="Cloud-vpn-solutions bg-custom pb-0 lg:pt-33 sm:pt-25 pt-15"
       aria-label="Complete VPN and Cloud Solutions">
       <div class="Container">
         <div class="grid md:grid-cols-12 items-center sm:gap-12 gap-8">
           <div class="md:col-span-6">
-            <div class="flex flex-col md:items-start sm:items-center md:text-start sm:text-center sm:gap-8.5 gap-5">
+            <div data-aos="fade-up"
+              class="flex flex-col md:items-start sm:items-center md:text-start sm:text-center sm:gap-8.5 gap-5">
               <div class="flex flex-col md:items-start sm:items-center sm:gap-4.5 gap-3">
-                <h1 class="lg:!text-[54px] lg2:!text-[60px] md:w-auto sm:w-7/12" role="heading" aria-level="1">
+                <h1 class="lg:!text-[54px] lg2:!text-[60px] md:w-auto sm:w-7/12" aria-level="1">
                   Complete VPN and Cloud Solutions
                 </h1>
                 <p class="lg3:w-[86%] lg2:w-11/12 md:w-auto sm:w-11/12">
@@ -365,25 +391,24 @@
                   vitae faucibus purus sit molestie pharetra. Et tortor leo arcu urna purus sit donec tellus sapien.
                 </p>
               </div>
-              <div class="flex 2xs:flex-row flex-col lg2:gap-17 md:gap-9 2xs:gap-14 gap-5" role="listgroup"
-                aria-label="VPN features">
-                <ul class="flex flex-col sm:gap-7 gap-5" role="list">
-                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+              <div class="flex 2xs:flex-row flex-col lg2:gap-17 md:gap-9 2xs:gap-14 gap-5">
+                <ul class="flex flex-col sm:gap-7 gap-5">
+                  <li class="sm:text-xl flex flex-row items-center gap-3">
                     <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
                     Stable &amp; Reliable
                   </li>
-                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                  <li class="sm:text-xl flex flex-row items-center gap-3">
                     <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
                     24/7
                     Live Support
                   </li>
                 </ul>
-                <ul class="flex flex-col sm:gap-7 gap-5" role="list">
-                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                <ul class="flex flex-col sm:gap-7 gap-5">
+                  <li class="sm:text-xl flex flex-row items-center gap-3">
                     <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
                     Anonymous Access
                   </li>
-                  <li class="sm:text-xl flex flex-row items-center gap-3" role="listitem">
+                  <li class="sm:text-xl flex flex-row items-center gap-3 md2:w-auto md:w-10/12">
                     <i class="fa-regular fa-circle-check text-txtblue sm:text-2xl text-xl" aria-hidden="true"></i>
                     120.1324.28 IPs
                   </li>
@@ -392,9 +417,9 @@
             </div>
           </div>
           <div class="md:col-span-6">
-            <div class="flex md:justify-end">
+            <div data-aos="fade-down" class="flex md:justify-end">
               <figure class="md:w-fit w-full" role="img" aria-label="VPN and Cloud solutions illustration">
-                <img src="assets/images/index/vpn-solutions.png" alt="vpn-solutions" class="w-full">
+                <img src="assets/images/index/vpn-solutions.webp" alt="vpn-solutions" class="w-full">
               </figure>
             </div>
           </div>
@@ -407,7 +432,7 @@
       <div class="Container">
         <div class="flex flex-col lg:gap-17 sm:gap-12 gap-9">
           <div class="flex flex-col items-center gap-3 text-center">
-            <h2 role="heading" aria-level="2">
+            <h2 aria-level="2">
               The best services of <span class="font-bold">reimVPN</span>
             </h2>
             <p class="lg2:w-[49%] md:w-7/12 sm:w-10/12">
@@ -419,8 +444,8 @@
           <div class="grid sm:grid-cols-12 lg2:gap-7.5 gap-6" role="list">
 
             <div class="md:col-span-3 sm:col-span-6" role="listitem">
-              <a href="features.html"
-                class="bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 hover:border-blue1 transition-all duration-200"
+              <a data-aos="flip-left" href="features.html"
+                class="bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 hover:border-blue1 group transition-all duration-200"
                 aria-label="Learn more about One Account for Multiple Devices">
                 <div class="sm:w-25 w-21 sm:h-22 h-18 bg-blue1 rounded-[20px] flex flex-col items-center justify-center"
                   role="presentation">
@@ -430,9 +455,9 @@
                   </figure>
                 </div>
                 <div class="flex flex-col items-center gap-4 text-center">
-                  <h5 class="lg2:w-2/3 3xs:w-full w-8/12">One Account for Multiple Devices</h5>
+                  <h5 class="lg2:w-2/3 lg:w-11/12 3xs:w-full w-8/12">One Account for Multiple Devices</h5>
                   <span
-                    class="flex flex-row items-center gap-2.5 transition-all duration-300 hover:gap-4 hover:text-txtblue">
+                    class="flex flex-row items-center gap-2.5 transition-all duration-300 group-hover:gap-4 group-hover:text-txtblue">
                     Read More <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
                   </span>
                 </div>
@@ -440,8 +465,8 @@
             </div>
 
             <div class="md:col-span-3 sm:col-span-6" role="listitem">
-              <a href="features.html"
-                class="group bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 hover:border-blue1 transition-all duration-200"
+              <a data-aos="flip-left" href="features.html"
+                class="group bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 group hover:border-blue1 transition-all duration-200"
                 aria-label="Learn more about Split Tunnel">
                 <div class="sm:w-25 w-21 sm:h-22 h-18 bg-blue1 rounded-[20px] flex flex-col items-center justify-center"
                   role="presentation">
@@ -453,7 +478,7 @@
                 <div class="flex flex-col items-center gap-4 text-center">
                   <h5 class="md:w-2/3">Split Tunnel</h5>
                   <span
-                    class="flex flex-row items-center gap-2.5 transition-all duration-300 hover:gap-4 hover:text-txtblue">
+                    class="flex flex-row items-center gap-2.5 transition-all duration-300 group-hover:gap-4 group-hover:text-txtblue">
                     Read More <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
                   </span>
                 </div>
@@ -461,8 +486,8 @@
             </div>
 
             <div class="md:col-span-3 sm:col-span-6" role="listitem">
-              <a href="features.html"
-                class="group bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 hover:border-blue1 transition-all duration-200"
+              <a data-aos="flip-left" href="features.html"
+                class="group bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 group hover:border-blue1 transition-all duration-200"
                 aria-label="Learn more about Fast Servers for Gaming">
                 <div class="sm:w-25 w-21 sm:h-22 h-18 bg-blue1 rounded-[20px] flex flex-col items-center justify-center"
                   role="presentation">
@@ -472,9 +497,9 @@
                   </figure>
                 </div>
                 <div class="flex flex-col items-center gap-4 text-center">
-                  <h5 class="lg2:w-2/3">Fast Servers for Gaming</h5>
+                  <h5 class="lg:w-2/3">Fast Servers for Gaming</h5>
                   <span
-                    class="flex flex-row items-center gap-2.5 transition-all duration-300 hover:gap-4 hover:text-txtblue">
+                    class="flex flex-row items-center gap-2.5 transition-all duration-300 group-hover:gap-4 group-hover:text-txtblue">
                     Read More <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
                   </span>
                 </div>
@@ -482,8 +507,8 @@
             </div>
 
             <div class="md:col-span-3 sm:col-span-6" role="listitem">
-              <a href="features.html"
-                class="group bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 hover:border-blue1 transition-all duration-200"
+              <a data-aos="flip-left" href="features.html"
+                class="group bg-dark-A pt-11 pb-9 px-3 border border-bordercolor2 rounded-3xl flex flex-col items-center gap-7 group hover:border-blue1 transition-all duration-200"
                 aria-label="Learn more about No Data Limited">
                 <div class="sm:w-25 w-21 sm:h-22 h-18 bg-blue1 rounded-[20px] flex flex-col items-center justify-end"
                   role="presentation">
@@ -495,7 +520,7 @@
                 <div class="flex flex-col items-center gap-4 text-center">
                   <h5 class="md:w-2/3">No Data Limited</h5>
                   <span
-                    class="flex flex-row items-center gap-2.5 transition-all duration-300 hover:gap-4 hover:text-txtblue">
+                    class="flex flex-row items-center gap-2.5 transition-all duration-300 group-hover:gap-4 group-hover:text-txtblue">
                     Read More <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
                   </span>
                 </div>
@@ -504,7 +529,7 @@
           </div>
 
           <div class="flex justify-center">
-            <a href="features.html"
+            <a href="features.html#services"
               class="flex items-center gap-2.5 !font-medium transition-all duration-300 hover:text-blue1 group w-fit"
               aria-label="View more features">
               View More
@@ -519,103 +544,118 @@
     </section>
     <!-- ======== End of 1.7. Services Section ======== -->
     <!-- ======== 1.8. Services Slider Section ======== -->
-    <section class="Services-slider lg:pb-18 sm:pb-14 pb-10 relative" aria-label="VPN Speed Highlights">
-      <div class="pt-19 2xs:pt-21 sm:pt-29 lg2:pb-37 lg:pb-44 md2:pb-47 sm:pb-35 2xs:pb-28 pb-22">
+    <section data-aos="fade-zoom-in" class="Services-slider lg:pb-18 sm:pb-14 pb-10 relative max-w-480 mx-auto"
+      aria-label="VPN Speed Highlights">
+      <div class="pt-19 2xs:pt-21 sm:pt-29 lg2:pb-37 lg:pb-44 md2:pb-47 sm:pb-35 2xs:pb-28 pb-22 mx-auto">
 
         <div class="swiper swiper1" aria-hidden="true">
-          <div class="swiper-wrapper !ease-linear">
-            <div class="swiper-slide h-light !select-none text-bordercolor2" aria-hidden="true">
+          <div class="swiper-wrapper !ease-linear !w-full">
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
               <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
             </div>
-            <div class="swiper-slide h-light !select-none text-bordercolor2" aria-hidden="true">
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
               <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
             </div>
-            <div class="swiper-slide h-light !select-none text-bordercolor2" aria-hidden="true">
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
+              <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
+            </div>
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
               <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
             </div>
           </div>
         </div>
 
         <div class="swiper swiper2" aria-hidden="true">
-          <div class="swiper-wrapper !ease-linear">
-            <div class="swiper-slide h-light !select-none text-bordercolor2" aria-hidden="true">
+          <div class="swiper-wrapper !ease-linear !w-full">
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
               <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
             </div>
-            <div class="swiper-slide h-light !select-none text-bordercolor2" aria-hidden="true">
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
               <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
             </div>
-            <div class="swiper-slide h-light !select-none text-bordercolor2" aria-hidden="true">
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
+              <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
+            </div>
+            <div class="swiper-slide h-light !select-none text-bordercolor2 whitespace-nowrap !w-fit"
+              aria-hidden="true">
               <span class="word">Connect</span> <span class="word">to</span> <span class="word">Network</span>
             </div>
           </div>
         </div>
       </div>
-      <figure
-        class="w-fit absolute top-0 lg2:left-5/12 lg:left-[40%] md:left-[38%] sm:left-[35%] xs:left-3/12 2xs:left-[22%] 3xs:left-[19%] 4xs:left-[18%] left-[14%] z-10 md2:scale-100 md:scale-90 sm:scale-85 2xs:scale-70 scale-60 md2:mt-0 md:mt-[-23px] sm:mt-[-36px] 2xs:mt-[-67px] mt-[-92px]"
-        aria-hidden="true">
-        <img src="assets/images/index/services-slider-iphone.png" alt="Services Slider iPhone" class="w-full">
-      </figure>
+      <div class="flex flex-col items-center">
+        <figure
+          class="w-fit mx-auto absolute top-0 z-10 md2:scale-100 md:scale-90 sm:scale-85 2xs:scale-70 scale-60 md2:mt-0 md:mt-[-23px] sm:mt-[-36px] 2xs:mt-[-67px] mt-[-92px]"
+          aria-hidden="true">
+          <img src="assets/images/index/services-slider-iphone.webp" alt="Services Slider iPhone" class="w-full">
+          <div
+            class="w-37 flex items-center gap-1.5 py-3.5 px-4 bg-white text-black rounded-[20px] absolute sm:top-27 top-20 left-46 z-20"
+            role="status" aria-live="polite">
+            <div class="w-11.5 h-11.5 flex items-center justify-center bg-[#534B7C] rounded-full" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/browsing-icon.svg" alt="Browsing Icon" class="w-5" aria-hidden="true">
+              </figure>
+            </div>
+            <div class="flex flex-col">
+              <span class="p-s">Browsing</span>
+              <span class="text-sm"><span class="speed-value" data-target="485">0</span> mbps</span>
+            </div>
+          </div>
 
-      <div
-        class="flex items-center gap-1.5 py-3.5 px-4 bg-white text-black rounded-[20px] absolute md2:top-27 md:top-23 sm:top-20 2xs:top-16 top-12 lg3:right-142 lg2:right-123 lg:right-100 md2:right-79 md:right-78 sm:right-50 xs:right-22 2xs:right-14 4xs:right-11 right-5 z-20 md2:scale-100 md:scale-85 sm:scale-80 2xs:scale-60 scale-50"
-        role="status" aria-live="polite">
-        <div class="w-11.5 h-11.5 flex items-center justify-center bg-[#534B7C] rounded-full" aria-hidden="true">
-          <figure class="w-fit">
-            <img src="assets/images/icons/browsing-icon.svg" alt="Browsing Icon" class="w-5" aria-hidden="true">
-          </figure>
-        </div>
-        <div class="flex flex-col">
-          <span class="p-s">Browsing</span>
-          <span class="text-sm"><span class="speed-value" data-target="485">0</span> mbps</span>
-        </div>
-      </div>
-
-      <div
-        class="flex items-center gap-1.5 py-3.5 px-4 bg-white text-black rounded-[20px] absolute lg2:bottom-42 lg:bottom-48 md2:bottom-45 sm:bottom-35 2xs:bottom-25 bottom-21 lg3:left-134 lg2:left-122 lg:left-95 md2:left-73 md:left-74 sm:left-49 xs:left-18 2xs:left-11 4xs:left-9 left-3 z-20 md2:scale-100 md:scale-85 sm:scale-80 2xs:scale-60 scale-50"
-        role="status" aria-live="polite">
-        <div class="w-11.5 h-11.5 flex items-center justify-center bg-[#534B7C] rounded-full" aria-hidden="true">
-          <figure class="w-fit">
-            <img src="assets/images/icons/streaming-icon.svg" alt="Streaming Icon" class="w-6" aria-hidden="true">
-          </figure>
-        </div>
-        <div class="flex flex-col">
-          <span class="p-s">Streaming</span>
-          <span class="text-sm"><span class="speed-value" data-target="128">0</span> mbps</span>
-        </div>
+          <div
+            class="w-37 flex items-center gap-1.5 py-3.5 px-4 bg-white text-black rounded-[20px] absolute bottom-25 right-46 z-20"
+            role="status" aria-live="polite">
+            <div class="w-11.5 h-11.5 flex items-center justify-center bg-[#534B7C] rounded-full" aria-hidden="true">
+              <figure class="w-fit">
+                <img src="assets/images/icons/streaming-icon.svg" alt="Streaming Icon" class="w-6" aria-hidden="true">
+              </figure>
+            </div>
+            <div class="flex flex-col">
+              <span class="p-s">Streaming</span>
+              <span class="text-sm"><span class="speed-value" data-target="128">0</span> mbps</span>
+            </div>
+          </div>
+        </figure>
       </div>
     </section>
     <!-- ======== End of 1.8. Services Slider Section ======== -->
-    <!-- ======== 1.9. Locations Section ======== -->
-    <section class="Locations px-2.5" aria-label="Server Locations">
-      <div class="flex flex-col lg:gap-14 sm:gap-10 gap-8">
-        <div class="grid lg2:grid-cols-7 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 2xs:grid-cols-2 sm:gap-5 gap-3.5">
+    <!-- ======== 1.9. Servers Location Section ======== -->
+    <section class="Locations px-2.5" id="server" aria-label="Server Locations">
+      <div class="flex flex-col lg:gap-14 sm:gap-10 gap-8 max-w-480 mx-auto">
+        <div data-aos="zoom-in"
+          class="grid lg2:grid-cols-7 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 sm:gap-5 gap-3.5">
 
           <!-- Australia -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B transition-all duration-300 cursor-pointer outline-none focus:outline-none"
             role="button" tabindex="0" aria-label="Server location: Australia. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
                 <figure class="w-fit">
-                  <img src="assets/images/icons/austrailia-flag.svg" alt="Austrailia Flag" class="w-11">
+                  <img src="assets/images/icons/austrailia-flag.svg" alt="Australia Flag" class="w-11">
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>Australia</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">Australia</h5>
             </div>
           </div>
 
           <!-- United States -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
             role="button" tabindex="0" aria-label="Server location: United States. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
@@ -624,21 +664,19 @@
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>United States</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">United States</h5>
             </div>
           </div>
 
           <!-- China -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
             role="button" tabindex="0" aria-label="Server location: China. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
@@ -647,21 +685,19 @@
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>China</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">China</h5>
             </div>
           </div>
 
           <!-- United Kingdom -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
             role="button" tabindex="0" aria-label="Server location: United Kingdom. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
@@ -670,21 +706,19 @@
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>United Kingdom</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">United Kingdom</h5>
             </div>
           </div>
 
           <!-- Singapore -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
             role="button" tabindex="0" aria-label="Server location: Singapore. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
@@ -693,21 +727,19 @@
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>Singapore</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">Singapore</h5>
             </div>
           </div>
 
           <!-- Japan -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
             role="button" tabindex="0" aria-label="Server location: Japan. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
@@ -716,21 +748,19 @@
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>Japan</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">Japan</h5>
             </div>
           </div>
 
           <!-- Germany -->
-          <div
-            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col gap-21 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
+          <div data-aos="zoom-in"
+            class="bg-dark-A border border-bordercolor2 rounded-[25px] flex flex-col sm:gap-21 gap-12 px-5 pt-6 pb-5 hover:bg-dark-B group transition-all duration-300 cursor-pointer"
             role="button" tabindex="0" aria-label="Server location: Germany. Status indicator.">
             <div class="flex items-center justify-between">
               <div class="border border-white rounded-full overflow-hidden" aria-hidden="true">
@@ -739,15 +769,13 @@
                 </figure>
               </div>
               <div class="flex items-center gap-1" aria-hidden="true">
-                <i class="fa-solid fa-signal text-[#444F7D] group-hover:text-blue1 transition-all duration-300"></i>
-                <div
-                  class="w-3 h-3 border border-[#444F7D] rounded-full group-hover:bg-[#2CD340] transition-all duration-300">
-                </div>
+                <i class="fa-solid fa-signal text-[#444F7D] transition-all duration-300"></i>
+                <div class="w-3 h-3 border border-[#444F7D] rounded-full transition-all duration-300"></div>
               </div>
             </div>
             <div class="flex flex-col gap-1">
               <p class="!text-sm">Location</p>
-              <h6>Germany</h6>
+              <h5 class="lg3:!text-xl lg2:!text-lg">Germany</h5>
             </div>
           </div>
 
@@ -759,12 +787,12 @@
         </div>
       </div>
     </section>
-    <!-- ======== End of 1.9. Locations Section ======== -->
+    <!-- ======== End of 1.9. Servers Location Section ======== -->
     <!-- ======== 1.10. Features Section ======== -->
     <section class="Features sec-pad" aria-label="Features">
       <div class="Container">
         <div class="grid md:grid-cols-2 grid-cols-1 gap-8">
-          <div class="flex flex-col lg:gap-9.5 sm:gap-7 gap-5">
+          <div data-aos="fade-up" class="flex flex-col lg:gap-9.5 sm:gap-7 gap-5">
             <h2 id="features-heading">Explore Features</h2>
             <div class="flex flex-col gap-11">
               <div class="flex flex-col gap-4 lg3:w-[87%] lg2:w-11/12 group cursor-pointer" role="region"
@@ -812,7 +840,7 @@
             </div>
           </div>
 
-          <div class="flex flex-col items-end">
+          <div data-aos="fade-down" class="flex flex-col items-end">
             <div
               class="lg2:w-[90%] w-full bg-dark-A border border-bordercolor2 rounded-[25px] sm:pt-11 pt-8 sm:pb-14.5 pb-11 px-5"
               role="region" aria-labelledby="speed-average-heading">
@@ -915,7 +943,7 @@
               natoque aenean sed vitae nunc.</p>
           </div>
           <div class="grid md:grid-cols-3 sm:grid-cols-2 lg2:gap-7.5 sm:gap-5 gap-6" role="list">
-            <div
+            <div data-aos="fade-down"
               class="pt-10.5 pb-8 px-7.5 border-2 border-bordercolor2 rounded-[25px] bg-[#070E2E] hover:border-blue1 transition-all duration-300"
               role="listitem" aria-labelledby="plan-basic-title"
               aria-describedby="plan-basic-desc plan-basic-price plan-basic-features">
@@ -935,7 +963,7 @@
               <div class="flex flex-col gap-4.5" id="plan-basic-price">
                 <div class="flex items-center lg:gap-3 gap-2">
                   <h1>$10</h1>
-                  <span class="p">/Account</span>
+                  <span class="h6">/Account</span>
                 </div>
                 <div class="flex flex-col md2:gap-14.5 sm:gap-12 gap-10" id="plan-basic-features">
                   <ul class="flex flex-col gap-4.5">
@@ -952,7 +980,7 @@
               </div>
             </div>
 
-            <div
+            <div data-aos="fade-down"
               class="pt-10.5 pb-8 px-7.5 border-2 border-bordercolor2 rounded-[25px] bg-[#070E2E] hover:border-blue1 transition-all duration-300"
               role="listitem" aria-labelledby="plan-standard-title"
               aria-describedby="plan-standard-desc plan-standard-price plan-standard-features">
@@ -972,7 +1000,7 @@
               <div class="flex flex-col gap-4.5" id="plan-standard-price">
                 <div class="flex items-center lg:gap-3 gap-2">
                   <h1>$38</h1>
-                  <span class="p">/Account</span>
+                  <span class="h6">/Account</span>
                 </div>
                 <div class="flex flex-col md2:gap-14.5 sm:gap-12 gap-10" id="plan-standard-features">
                   <ul class="flex flex-col gap-4.5">
@@ -989,7 +1017,7 @@
               </div>
             </div>
 
-            <div
+            <div data-aos="fade-down"
               class="pt-10.5 pb-8 px-7.5 border-2 border-bordercolor2 rounded-[25px] bg-[#070E2E] hover:border-blue1 transition-all duration-300"
               role="listitem" aria-labelledby="plan-premium-title"
               aria-describedby="plan-premium-desc plan-premium-price plan-premium-features">
@@ -1009,7 +1037,7 @@
               <div class="flex flex-col gap-4.5" id="plan-premium-price">
                 <div class="flex items-center lg:gap-3 gap-2">
                   <h1>$98</h1>
-                  <span class="p">/Account</span>
+                  <span class="h6">/Account</span>
                 </div>
                 <div class="flex flex-col md2:gap-14.5 sm:gap-12 gap-10" id="plan-premium-features">
                   <ul class="flex flex-col gap-4.5">
@@ -1035,7 +1063,7 @@
       <div class="Container">
         <div class="md:grid grid-cols-12 flex flex-col gap-7.5">
           <div class="col-span-5">
-            <div
+            <div data-aos="fade-up"
               class="flex flex-col md:items-start items-center justify-center md:gap-3.5 gap-2.5 md:text-start text-center h-full">
               <h2 id="testimonials-heading" class="sm:w-full w-11/12">Millions of User’s Positive Reviews</h2>
               <p class="lg3:w-10/12 lg2:w-11/12 md:w-full sm:w-4/6 w-11/12">Lorem ipsum dolor sit amet consectetur.
@@ -1043,13 +1071,13 @@
             </div>
           </div>
           <div class="col-span-7">
-            <div
+            <div data-aos="fade"
               class="relative bg-dark-A border border-bordercolor2 rounded-[25px] lg2:py-12.5 lg3:px-16 sm:py-9 py-6 lg3:px-13 lg2:px-11.5 sm:px-10 px-4"
               role="region" aria-label="Customer testimonials carousel">
-              <div class="swiper group testimonial-swiper" aria-roledescription="carousel">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide" role="group" aria-roledescription="slide"
-                    aria-label="Testimonial from Nathan Walsh">
+              <div class="swiper group testimonial-swiper h-full" aria-roledescription="carousel">
+                <div class="swiper-wrapper h-full">
+                  <div class="swiper-slide m-auto" role="group" aria-roledescription="slide"
+                    aria-label="Testimonial from Markus Weber">
                     <div class="flex flex-col items-center gap-6.5 sm:p-4 p-2 text-center">
                       <p class="lg3:w-[96%]">Lorem ipsum dolor sit amet consectetur. Consequat ipsum elementum arcu mi
                         orci cursus netus eros. Mauris non elit dui venenatis lobortis massa maecenas lorem malesuada.
@@ -1066,7 +1094,7 @@
                       </ul>
                       <div class="flex items-center gap-3">
                         <figure class="fit rounded-full overflow-hidden">
-                          <img src="assets/images/index/testimonials-1.png" alt="Portrait of Nathan Walsh"
+                          <img src="assets/images/index/testimonials-1.webp" alt="Portrait of Nathan Walsh"
                             class="w-12.5">
                         </figure>
                         <div>
@@ -1077,7 +1105,7 @@
                     </div>
                   </div>
 
-                  <div class="swiper-slide" role="group" aria-roledescription="slide"
+                  <div class="swiper-slide m-auto" role="group" aria-roledescription="slide"
                     aria-label="Testimonial from Nathan Walsh">
                     <div class="flex flex-col items-center gap-6.5 sm:p-4 p-2 text-center">
                       <p class="lg3:w-[96%]">Lorem ipsum dolor sit amet consectetur. Consequat ipsum elementum arcu mi
@@ -1095,7 +1123,7 @@
                       </ul>
                       <div class="flex items-center gap-3">
                         <figure class="fit rounded-full overflow-hidden">
-                          <img src="assets/images/index/testimonials-1.png" alt="Portrait of Nathan Walsh"
+                          <img src="assets/images/index/testimonials-1.webp" alt="Portrait of Nathan Walsh"
                             class="w-12.5">
                         </figure>
                         <div>
@@ -1106,8 +1134,8 @@
                     </div>
                   </div>
 
-                  <div class="swiper-slide" role="group" aria-roledescription="slide"
-                    aria-label="Testimonial from Nathan Walsh">
+                  <div class="swiper-slide m-auto" role="group" aria-roledescription="slide"
+                    aria-label="Testimonial from John D.">
                     <div class="flex flex-col items-center gap-6.5 sm:p-4 p-2 text-center">
                       <p class="lg3:w-[96%]">Lorem ipsum dolor sit amet consectetur. Consequat ipsum elementum arcu mi
                         orci cursus netus eros. Mauris non elit dui venenatis lobortis massa maecenas lorem malesuada.
@@ -1124,7 +1152,7 @@
                       </ul>
                       <div class="flex items-center gap-3">
                         <figure class="fit rounded-full overflow-hidden">
-                          <img src="assets/images/index/testimonials-1.png" alt="Portrait of Nathan Walsh"
+                          <img src="assets/images/index/testimonials-1.webp" alt="Portrait of Nathan Walsh"
                             class="w-12.5">
                         </figure>
                         <div>
@@ -1148,21 +1176,21 @@
       <hr class="text-white h-0.5">
     </div>
     <!-- ======== 1.13 FAQ's Section ======== -->
-    <section class="Faq sec-pad" aria-label="Frequently Asked Questions">
+    <section data-aos="fade-zoom-in" class="Faq sec-pad" aria-label="Frequently Asked Questions">
       <div class="Container">
         <div class="flex flex-col lg:gap-12.5 sm:gap-9 gap-5">
           <h2 class="text-center" id="faq-heading">Any Questions?</h2>
           <div id="faq-wrapper" class="space-y-3.5" role="region" aria-label="Frequently Asked Questions">
             <div class="sm:pt-5 pt-3.5">
-              <button
+              <div
                 class="faq-toggle w-full flex items-start justify-between sm:gap-6 gap-4 transition-all lg:pl-5.5 pl-3.5 lg:pr-3 pr-3 cursor-pointer"
-                aria-expanded="true" aria-controls="faq1-content" id="faq1">
+                aria-expanded="true" role="button" id="faq1">
                 <div class="flex items-center lg:gap-8 gap-5">
-                  <h1 class="!font-bold text-transparent stroke-one">01</h1>
+                  <h1 class="!font-poppins !font-bold text-transparent stroke-one">01</h1>
                   <div class="text-start">
                     <div class="lg:text-[26px] sm:text-xl text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing
                     </div>
-                    <div class="accordion-content" id="faq1-content" role="region" aria-labelledby="faq1">
+                    <div class="accordion-content" id="faq1-content" role="region" aria-label="faq1">
                       <p class="pt-2 sm:pb-3 lg3:w-[78%] lg2:w-[86%] md:w-11/12 sm:w-[98%]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in
@@ -1173,18 +1201,18 @@
                   </div>
                 </div>
                 <span class="sm:text-[40px] text-[30px] font-light mt-5">&#8722;</span>
-              </button>
+              </div>
             </div>
             <div class="border-t border-white sm:pt-5 pt-3.5">
-              <button
+              <div
                 class="faq-toggle w-full flex items-start justify-between sm:gap-6 gap-4 transition-all lg:pl-5.5 pl-3.5 lg:pr-3 pr-3 cursor-pointer"
-                aria-expanded="false" aria-controls="faq2-content" id="faq2">
+                aria-expanded="false" role="button" id="faq2">
                 <div class="flex items-center lg:gap-8 gap-5">
-                  <h1 class="!font-bold text-transparent stroke-one ">02</h1>
+                  <h1 class="!font-poppins !font-bold text-transparent stroke-one ">02</h1>
                   <div class="text-start">
                     <div class="lg:text-[26px] sm:text-xl text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing
                     </div>
-                    <div class="accordion-content" id="faq2-content" role="region" aria-labelledby="faq2">
+                    <div class="accordion-content" id="faq2-content" role="region" aria-label="faq2">
                       <p class="pt-2 sm:pb-3 lg3:w-[78%] lg2:w-[86%] md:w-11/12 sm:w-[98%]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in
@@ -1195,18 +1223,18 @@
                   </div>
                 </div>
                 <span class="sm:text-[40px] text-[30px] font-light mt-5">&#8722;</span>
-              </button>
+              </div>
             </div>
             <div class="border-t border-white sm:pt-5 pt-3.5">
-              <button
+              <div
                 class="faq-toggle w-full flex items-start justify-between sm:gap-6 gap-4 transition-all lg:pl-5.5 pl-3.5 lg:pr-3 pr-3 cursor-pointer"
-                aria-expanded="false" aria-controls="faq3-content" id="faq3">
+                aria-expanded="false" role="button" id="faq3">
                 <div class="flex items-center lg:gap-8 gap-5">
-                  <h1 class="!font-bold text-transparent stroke-one">03</h1>
+                  <h1 class="!font-poppins !font-bold text-transparent stroke-one">03</h1>
                   <div class="text-start">
                     <div class="lg:text-[26px] sm:text-xl text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing
                     </div>
-                    <div class="accordion-content" id="faq3-content" role="region" aria-labelledby="faq3">
+                    <div class="accordion-content" id="faq3-content" role="region" aria-label="faq3">
                       <p class="pt-2 sm:pb-3 lg3:w-[78%] lg2:w-[86%] md:w-11/12 sm:w-[98%]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in
@@ -1217,18 +1245,18 @@
                   </div>
                 </div>
                 <span class="sm:text-[40px] text-[30px] font-light mt-5">&#8722;</span>
-              </button>
+              </div>
             </div>
             <div class="border-t border-white sm:pt-5 pt-3.5">
-              <button
+              <div
                 class="faq-toggle w-full flex items-start justify-between sm:gap-6 gap-4 transition-all lg:pl-5.5 pl-3.5 lg:pr-3 pr-3 cursor-pointer"
-                aria-expanded="false" aria-controls="faq4-content" id="faq4">
+                aria-expanded="false" role="button" id="faq4">
                 <div class="flex items-center lg:gap-8 gap-5">
-                  <h1 class="!font-bold text-transparent stroke-one">04</h1>
+                  <h1 class="!font-poppins !font-bold text-transparent stroke-one">04</h1>
                   <div class="text-start">
                     <div class="lg:text-[26px] sm:text-xl text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing
                     </div>
-                    <div class="accordion-content" id="faq4-content" role="region" aria-labelledby="faq4">
+                    <div class="accordion-content" id="faq4-content" role="region" aria-label="faq4">
                       <p class="pt-2 sm:pb-3 lg3:w-[78%] lg2:w-[86%] md:w-11/12 sm:w-[98%]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in
@@ -1239,18 +1267,18 @@
                   </div>
                 </div>
                 <span class="sm:text-[40px] text-[30px] font-light mt-5">&#8722;</span>
-              </button>
+              </div>
             </div>
             <div class="border-t border-white sm:pt-5 pt-3.5">
-              <button
+              <div
                 class="faq-toggle w-full flex items-start justify-between sm:gap-6 gap-4 transition-all lg:pl-5.5 pl-3.5 lg:pr-3 pr-3 cursor-pointer"
-                aria-expanded="false" aria-controls="faq5-content" id="faq5">
+                aria-expanded="false" role="button" id="faq5">
                 <div class="flex items-center lg:gap-8 gap-5">
-                  <h1 class="!font-bold text-transparent stroke-one">05</h1>
+                  <h1 class="!font-poppins !font-bold text-transparent stroke-one">05</h1>
                   <div class="text-start">
                     <div class="lg:text-[26px] sm:text-xl text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing
                     </div>
-                    <div class="accordion-content" id="faq5-content" role="region" aria-labelledby="faq5">
+                    <div class="accordion-content" id="faq5-content" role="region" aria-label="faq5">
                       <p class="pt-2 sm:pb-3 lg3:w-[78%] lg2:w-[86%] md:w-11/12 sm:w-[98%]">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed. Diam in
@@ -1261,7 +1289,7 @@
                   </div>
                 </div>
                 <span class="sm:text-[40px] text-[30px] font-light mt-5">&#8722;</span>
-              </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1275,55 +1303,55 @@
           <h4 class="text-center" id="compatible-os-heading">Compatible Operating Systems</h4>
           <div class="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 lg:gap-6 gap-4" role="list"
             aria-label="List of supported operating systems">
-            <div
-              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center"
+            <div data-aos="zoom-in"
+              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center group"
               role="listitem" aria-label="Mac OS supported">
               <div
-                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center">
+                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center group-hover:-translate-y-2 group-hover:shadow-[0_20px_30px_rgba(12,81,146,1)] transition-all duration-400">
                 <figure class="w-fit">
                   <img src="assets/images/icons/mac-os.svg" alt="Mac-Os icon" class="lg:w-13 sm:w-10 w-8">
                 </figure>
               </div>
               <h5 class="font-medium">Mac OS</h5>
             </div>
-            <div
-              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center"
+            <div data-aos="zoom-in"
+              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center group"
               role="listitem" aria-label="Windows supported">
               <div
-                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center">
+                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center group-hover:-translate-y-2 group-hover:shadow-[0_20px_30px_rgba(12,81,146,1)] transition-all duration-400">
                 <figure class="w-fit">
                   <img src="assets/images/icons/windows-os.svg" alt="windows icon" class="w-9">
                 </figure>
               </div>
               <h5 class="font-medium">Windows</h5>
             </div>
-            <div
-              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center"
+            <div data-aos="zoom-in"
+              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center group"
               role="listitem" aria-label="iPhone or iPod OS supported">
               <div
-                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center">
+                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center group-hover:-translate-y-2 group-hover:shadow-[0_20px_30px_rgba(12,81,146,1)] transition-all duration-400">
                 <figure class="w-fit">
                   <img src="assets/images/icons/ios.svg" alt="iOS icon" class="w-9">
                 </figure>
               </div>
               <h5 class="font-medium">Iphone/Ipod OS</h5>
             </div>
-            <div
-              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center"
+            <div data-aos="zoom-in"
+              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center group"
               role="listitem" aria-label="Android supported">
               <div
-                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center">
+                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center group-hover:-translate-y-2 group-hover:shadow-[0_20px_30px_rgba(12,81,146,1)] transition-all duration-400">
                 <figure class="w-fit">
                   <img src="assets/images/icons/android-os.svg" alt="Android icon" class="w-12">
                 </figure>
               </div>
               <h5 class="font-medium">Android</h5>
             </div>
-            <div
-              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center"
+            <div data-aos="zoom-in"
+              class="flex flex-col items-center justify-center gap-4 border border-bordercolor2 lg2:pt-12.5 pt-9 lg2:pb-10 pb-8 px-4 rounded-[25px] bg-[#070E2E] text-center group"
               role="listitem" aria-label="Linux supported">
               <div
-                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center">
+                class="lg:w-20.5 sm:w-17 w-15 lg:h-20.5 sm:h-17 h-15 bg-white rounded-[10px] flex items-center justify-center group-hover:-translate-y-2 group-hover:shadow-[0_20px_30px_rgba(12,81,146,1)] transition-all duration-400">
                 <figure class="w-fit">
                   <img src="assets/images/icons/linux-os.svg" alt="Linux icon" class="w-9">
                 </figure>
@@ -1340,7 +1368,7 @@
       <div class="Container">
         <div class="md:grid grid-cols-12 md:gap-7.5 flex flex-col gap-9">
           <div class="col-span-5">
-            <div class="flex flex-col md:gap-7.5 gap-6 md:pt-19">
+            <div data-aos="fade-up" class="flex flex-col md:gap-7.5 gap-6 md:pt-19">
               <div class="flex flex-col gap-3">
                 <h2 id="blogs-heading">Operating Systems</h2>
                 <p class="lg3:w-[86%] lg2:w-[97%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -1363,11 +1391,11 @@
             </div>
           </div>
           <div class="col-span-7">
-            <div class="flex flex-col items-end" role="list" aria-label="Latest blog articles">
+            <div data-aos="fade-zoom-in" class="flex flex-col items-end" role="list" aria-label="Latest blog articles">
               <div class="lg3:w-9/12 lg2:w-10/12 flex flex-col lg2:gap-7.5 sm:gap-6 gap-10">
                 <div class="flex sm:flex-row flex-col items-center gap-5.5" role="listitem">
                   <figure class="md:w-full sm:w-fit w-full rounded-2xl overflow-hidden">
-                    <img src="assets/images/blogs/vpn-vs-cloud.png"
+                    <img src="assets/images/blogs/vpn-vs-cloud.webp"
                       alt="IT professional analyzing VPN security data on screen" class="w-full">
                   </figure>
                   <div class="flex flex-col gap-2.5 sm:pl-0 pl-1">
@@ -1382,7 +1410,7 @@
                 </div>
                 <div class="flex sm:flex-row flex-col items-center gap-5.5" role="listitem">
                   <figure class="md:w-full sm:w-fit w-full rounded-2xl overflow-hidden">
-                    <img src="assets/images/blogs/vpn-cloud-remote-work.png"
+                    <img src="assets/images/blogs/vpn-cloud-remote-work.webp"
                       alt="Remote employee using VPN cloud solution on laptop" class="w-full">
                   </figure>
                   <div class="flex flex-col gap-2.5 pl-1">
@@ -1397,7 +1425,7 @@
                 </div>
                 <div class="flex sm:flex-row flex-col items-center gap-5.5" role="listitem">
                   <figure class="md:w-full sm:w-fit w-full rounded-2xl overflow-hidden">
-                    <img src="assets/images/blogs/vpn-protocols-choice.png"
+                    <img src="assets/images/blogs/vpn-protocols-choice.webp"
                       alt="IT professional analyzing VPN security data on screen" class="w-full">
                   </figure>
                   <div class="flex flex-col gap-2.5 pl-1">
@@ -1422,20 +1450,34 @@
     <footer class="pb-8" aria-label="Website Footer">
       <div class="flex flex-col sm:gap-12 gap-9">
         <h2 class="text-center" id="start-now-heading">Let’s Start Now</h2>
-        <div class="bg-[url('../images/bg/footer-bg.png')] bg-no-repeat bg-center">
+        <div class="bg-[url('../images/bg/footer-bg.webp')] bg-no-repeat sm:bg-center bg-[position:60%_50%]">
           <div class="Container">
-            <div class="flex flex-col lg:gap-92.5 gap-75">
+            <div class="flex flex-col lg:gap-92.5 sm:gap-75 gap-30">
               <div class="flex justify-center relative top-[-12px]">
                 <form
                   class="3xs:border 3xs:border-white 3xs:rounded-[60px] 3xs:bg-bordercolor2 py-1.5 sm:pl-7.5 3xs:pl-5 3xs:pr-1.5 sm:w-110 w-full flex 3xs:flex-row flex-col 3xs:justify-between 3xs:items-center gap-4"
-                  aria-labelledby="start-now-heading" role="form">
-                  <input type="email" name="email" id="email" placeholder="Enter your email"
+                  aria-labelledby="start-now-heading">
+                  <input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="email"
                     class="h-full placeholder:text-sm placeholder-white text-sm 3xs:border-none border border-white 3xs:rounded-none rounded-[60px] 3xs:bg-transparent bg-bordercolor2 py-3 px-4 3xs:w-fit w-full"
                     required aria-label="Enter your email address to subscribe">
                   <button type="submit"
-                    class="button hover1 sm:py-4.5 3xs:py-3.5 py-5 sm:px-6 px-5 flex items-center justify-center"
+                    class="button hover1 sm:!py-4 4xs:!py-[13px] !py-4.5 flex items-center justify-center"
                     aria-label="Subscribe to newsletter">Subscribe</button>
                 </form>
+              </div>
+              <!-- Success Modal -->
+              <div id="footerModal"
+                class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 invisible opacity-0 transition-opacity duration-300"
+                role="dialog" aria-modal="true">
+                <div
+                  class="modalContent bg-custom-3 rounded-2xl p-8 max-w-sm w-full text-center shadow-xl transform transition-all scale-95 duration-300 text-white">
+                  <figure class="w-fit mx-auto">
+                    <img src="assets/images/done-gif.gif" alt="Done Icon Animation">
+                  </figure>
+                  <h3 class="modalTitle mb-4">Subscription Successful</h3>
+                  <p class="modalDesc mb-6">Thank you for subscribing to our newsletter.</p>
+                  <button class="modalCloseBtn button hover3 px-13.5">Close</button>
+                </div>
               </div>
 
               <div>
@@ -1447,22 +1489,21 @@
                     </figure>
                   </a>
 
-                  <ul class="flex items-center lg2:gap-13 md:gap-8 3xs:gap-2 gap-1 sm:pt-0 pt-6" role="menubar"
+                  <ul class="flex items-center lg2:gap-13 md2:gap-8 md:gap-3 3xs:gap-2 gap-1" role="menubar"
                     aria-label="Footer navigation">
                     <li><a href="index.html" role="menuitem"
                         class="p-2 hover:text-txtblue transition-all duration-300">Home</a></li>
                     <li><a href="about.html" role="menuitem"
                         class="p-2 hover:text-txtblue transition-all duration-300">About</a></li>
-                    <li><a href="about.html" role="menuitem"
-                        class="p-2 hover:text-txtblue transition-all duration-300">Services</a></li>
-                    <li><a href="about.html" role="menuitem"
+                    <li><a href="features.html" role="menuitem"
+                        class="p-2 hover:text-txtblue transition-all duration-300">Features</a></li>
+                    <li><a href="contact.html" role="menuitem"
                         class="p-2 hover:text-txtblue transition-all duration-300">Contact</a></li>
-                    <li><a href="about.html" role="menuitem"
+                    <li><a href="blogs.html" role="menuitem"
                         class="p-2 hover:text-txtblue transition-all duration-300">Blog</a></li>
                   </ul>
 
-                  <div class="flex items-center md:gap-4 gap-3 border-l-2 md:pl-4 pl-2"
-                    aria-label="Download App Section">
+                  <div class="flex items-center md:gap-4 gap-3 border-l-2 md:pl-4 pl-2">
                     <p>Download the App</p>
                     <a href="#" class="group" aria-label="Download on Google Play"><span
                         class="w-8 h-8 bg-white flex items-center justify-center rounded-[6px] group-hover:bg-blue2 transition-all duration-300"><i
@@ -1475,8 +1516,7 @@
 
                 <hr class="!text-white/50 mt-6 mb-5">
 
-                <div class="flex sm:flex-row flex-col items-center justify-center gap-4"
-                  aria-label="Social media section">
+                <div class="flex sm:flex-row flex-col items-center justify-center gap-4">
                   <span class="text-sm">Follow Us:</span>
                   <div class="flex items-center gap-4">
                     <a href="#" aria-label="Follow us on Facebook"
@@ -1502,8 +1542,7 @@
 
                 <hr class="!text-white/50 my-5">
 
-                <div class="flex sm:flex-row flex-col items-center justify-center md:gap-11 sm:gap-7 gap-4"
-                  aria-label="Footer legal links and copyright">
+                <div class="flex sm:flex-row flex-col items-center justify-center md:gap-11 sm:gap-7 gap-4">
                   <span class="text-white/70 text-sm"><i class="fa-regular fa-copyright"></i> 2025 reimVPN. All rights
                     reserved.</span>
                   <div class="flex 3xs:flex-row flex-col items-center md:gap-11 sm:gap-7 3xs:gap-5 gap-3">
@@ -1525,18 +1564,11 @@
   </div>
 
   <!-- Scripts -->
+  <!-- aos animation of js -->
+  <script src="assets/js/aos.js"></script>
   <!-- main javascript -->
   <script src="assets/js/custom.js"></script>
-  <!-- aos animation of js -->
-  <!-- <script src="assets/js/aos.js"></script> -->
   <!-- swiper Js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    // AOS.init({
-    //     duration: 1000,
-    //     once: true,
-    // });
-  </script>
 </body>
-
 </html>
