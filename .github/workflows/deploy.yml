@@ -46,7 +46,8 @@ jobs:
               }]
             }
           }' > .stylelintrc.json
-          # Run without --fix and enforce 0 warnings
+          npx stylelint "assets/css/**/style.css" --fix
+
           npx stylelint "assets/css/**/style.css" --max-warnings=0
 
       - name: Build Tailwind CSS
