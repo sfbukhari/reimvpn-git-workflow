@@ -1,11 +1,11 @@
 /* ======== Global Styling ======== */
-@media (width <= 1199px) {
+@media (max-width: 1199px) {
   .h-light {
     line-height: 86px;
   }
 
 
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
   .h-light {
     line-height: 80px;
   }
@@ -55,13 +55,14 @@
   }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .h-light {
     line-height: 66px;
   }
 }
 
-@media (width <= 767px) {
+@media (max-width: 767px) {
+
   h1,
   .h1 {
     font-size: 32px;
@@ -107,7 +108,7 @@
   }
 }
 
-@media (width <= 375px) {
+@media (max-width: 375px) {
   .h-light {
     line-height: 57px;
   }
@@ -115,7 +116,7 @@
 
 
 /* Hovers */
-@media (width <= 480px) {
+@media (max-width: 480px) {
 .hover1 {
   padding: 13px 25px;
 }
@@ -124,24 +125,22 @@
 /* ======== End of Global Styling ======== */
 
 /* Curved backgrounds */
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
   .bg-custom {
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
   }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .bg-custom {
     clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
   }
 }
 
-@media (width <= 480px) {
+@media (max-width: 480px) {
   .bg-custom-2 {
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
   }
 }
-
 /* End of Curved backgrounds */
 
-}
