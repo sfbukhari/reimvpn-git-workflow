@@ -145,7 +145,7 @@ menu,
 nav,
 section {
   display: block;
-}
+
 
 body {
   font-family: var(--font-outfit);
@@ -485,3 +485,4 @@ iframe {
 /* #endregion */
 
 /* ===== End of 1.13 FAQ's Section ===== */
+}
