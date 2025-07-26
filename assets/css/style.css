@@ -145,6 +145,7 @@ menu,
 nav,
 section {
   display: block;
+}
 
   body {
     font-family: var(--font-outfit);
@@ -484,4 +485,3 @@ section {
   /* #endregion */
 
   /* ===== End of 1.13 FAQ's Section ===== */
-}
