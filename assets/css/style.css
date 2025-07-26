@@ -467,7 +467,7 @@ iframe {
   .Faq .accordion-content {
     transition: all 0.6s ease-in-out;
     overflow: hidden;
-    max-height: 0;
+    max-height: 0
     opacity: 0;
   }
 
@@ -475,7 +475,7 @@ iframe {
     max-height: 300px;
     opacity: 1;
   }
-}
+
 
 /* #endregion */
 /* ===== End of 1.13 FAQ's Section ===== */
