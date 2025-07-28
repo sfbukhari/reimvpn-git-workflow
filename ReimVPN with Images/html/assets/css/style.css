@@ -145,13 +145,13 @@ section {
   display: block;
 }
 
-  body {
+  body 
     font-family: var(--font-outfit);
     line-height: 1;
     background: #02061a;
     color: #ffffff;
     scroll-behavior: smooth;
-  }
+
 
   ol,
   ul,
